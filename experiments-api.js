@@ -1,5 +1,6 @@
 const baseUrl = 'https://experiments.dscrd.workers.dev';
-const warning = null; // Warning message to show when the API is down e.g. "The API is down, please try again later"
+
+let warning = null; // Warning message to show when the API is down e.g. "The API is down, please try again later"
 
 function endpoint(path) {
   return `${baseUrl}/${path}`;
@@ -81,6 +82,6 @@ async function experimentsAPI(command, string) {
 
             return results.map(r => r).join("\n");
         default:
-            return `${warning ? `**${warning}**\n\n` : ''}**\`<>\`:** Required **|** **\`[]\`** Optional> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
+            return `${warning ? `⚠️ **${warning}**\n\n` : ''}**\`<>\`:** Required **|** **\`[]\`** Optional> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
     };
 };
