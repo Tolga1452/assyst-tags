@@ -1,6 +1,5 @@
 const baseUrl = 'https://experiments.dscrd.workers.dev';
-
-let warning = null; // Warning message to show when the API is down e.g. "The API is down, please try again later"
+const warning = null; // Warning message to show when the API is down e.g. "The API is down, please try again later"
 
 function endpoint(path) {
   return `${baseUrl}/${path}`;
