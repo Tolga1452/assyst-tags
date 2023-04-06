@@ -17,6 +17,7 @@ async function experimentsAPI(command, string) {
         let one = JSON.stringify(data, 0, 1);
         let none = JSON.stringify(data);
         let limit = 1970;
+        
         if (two.length <= limit) return two;
         else if (one.length <= limit) return one;
         else return none.slice(0, limit);
@@ -54,8 +55,6 @@ async function experimentsAPI(command, string) {
             };
         case "check":
             if (!args[0]) return ":x: Enter an experiment id";
-
-            let raw = false;
 
             const ids = args[1] === "raw" ? args.slice(2) : args.slice(1);
 
