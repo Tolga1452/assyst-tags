@@ -81,6 +81,6 @@ async function experimentsAPI(command, string) {
 
             return results.map(r => r).join("\n");
         default:
-            return `${warning ? `⚠️ **${warning}**\n\n` : ''}**\`<>\`** Required **|** **\`[]\`** Optional\n\n> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
+            return `${warning ? `⚠️ **${warning}**\n\n` : ''}**\`<>\`** Required **|** **\`[]\`** Optional\n\n> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n**Script made by \`✨Tolgchu✨#1452\`:** https://github.com/Tolga1452/assyst-tags#experiments-api\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
     };
 };
