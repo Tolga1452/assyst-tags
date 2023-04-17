@@ -1,4 +1,4 @@
-const baseUrl = 'https://discord-experimetns.glitch.me'; //'https://experiments.dscrd.workers.dev';
+const baseUrl = 'https://discord-experiments.glitch.me'; //'https://experiments.dscrd.workers.dev';
 const warning = 'User experiment rollouts (maybe other fields too) a bit bugged at the moment.'; // Warning message to show when the API is down e.g. "The API is down, please try again later"
 
 function endpoint(path) {
