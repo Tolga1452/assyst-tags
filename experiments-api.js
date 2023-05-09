@@ -1,5 +1,5 @@
 const baseUrl = 'https://experiments.dscrd.workers.dev';
-const warning = 'User experiment rollouts (maybe other fields too) a bit bugged at the moment.'; // Warning message to show when the API is down e.g. "The API is down, please try again later"
+const warning = 'User experiment rollouts bugged and API is not up-to-date yet! Fix is coming soon:tm:.'; // Warning message to show when the API is down e.g. "The API is down, please try again later"
 
 function endpoint(path) {
   return `${baseUrl}/${path}`;
