@@ -16,7 +16,7 @@
   * 0: Max member count
   */
 
-module.exports = {
+const data = {
     clyde_ai: {
         rate: 21,
         experimentType: 0,
