@@ -25,7 +25,7 @@ const lastUpdate = '1683826139'; //Unix timestamp as seconds
   */
 const data = {
     clyde_ai: {
-        rate: 21,
+        rate: 12,
         ranges: [[0, 1200]],
         experimentType: 0,
         rolloutType: 0,
