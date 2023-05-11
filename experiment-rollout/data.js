@@ -8,9 +8,8 @@
   * -1: Rollout has reverted due to security issues
   * 0: Regular rollout
   * 1: Very slow rollout from old to new
-  * 2: Rollout by server feature
-  * 3: Birthday activities feature
-  * 4: In beta/alpha testing
+  * 2: Birthday activities feature
+  * 3: In beta/alpha testing
   * 
   * Requirement Types
   * 0: Server must not have features
