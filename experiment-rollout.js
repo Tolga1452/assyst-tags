@@ -60,7 +60,7 @@ const data = {
     },
     channel_summaries: {
         experimentType: 0,
-        rolloutType: 4
+        rolloutType: 3
     },
     pomelo: {
         experimentType: 1,
@@ -95,11 +95,11 @@ const data = {
         ]
     },
     jamspace: {
-        rolloutType: 3,
+        rolloutType: 2,
         timestamp: 1685836800
     },
     color_together: {
-        rolloutType: 3,
+        rolloutType: 2,
         timestamp: 1686441600
     },
     voice_messages_server: {
@@ -124,7 +124,7 @@ const data = {
         rolloutType: 0
     },
     putt_party_paradise: {
-        rolloutType: 3,
+        rolloutType: 2,
         timestamp: 1684713600
     }
 };
