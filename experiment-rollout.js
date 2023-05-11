@@ -122,7 +122,7 @@ const data = {
     },
     server_guide: {
         rate: 50,
-        ranges: [5000, 10000],
+        ranges: [[5000, 10000]],
         experimentType: 0,
         rolloutType: 0
     },
