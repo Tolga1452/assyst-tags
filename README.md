@@ -21,6 +21,11 @@ experimentsAPI('tag_name', '{args}');
 }
 ```
 
+### Credits
+
+- **[API](https://experiments.dscrd.workers.dev) Creator:** @sndctd
+- **External Contributor:** @WilsontheWolf
+
 ## Experiment Rollout
 
 By @Tolga1452
@@ -35,8 +40,3 @@ Replace the `tag_name` with the name of the tag you want to create here and send
 experimentRollout('tag_name', '{tryarg:0}');
 }
 ```
-
-### Credits
-
-- **[API](https://experiments.dscrd.workers.dev) Creator:** @sndctd
-- **External Contributor:** @WilsontheWolf
