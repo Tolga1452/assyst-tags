@@ -17,7 +17,22 @@ Replace the `tag_name` with the name of the tag you want to create here and send
 ```
 -t create tag_name {js:
 {download:https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/main/experiments-api.js.js}
-experimentsAPI("tag_name", "{args}")
+experimentsAPI('tag_name', '{args}');
+}
+```
+
+## Experiment Rollout
+
+By @Tolga1452
+
+### Setup
+
+Replace the `tag_name` with the name of the tag you want to create here and send the message:
+
+```
+-t create tag_name {js: 
+{download:https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/main/experiment-rollout.js} 
+experimentRollout('tag_name', '{tryarg:0}');
 }
 ```
 

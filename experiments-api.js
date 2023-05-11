@@ -2,7 +2,7 @@ const baseUrl = 'https://experiments.dscrd.workers.dev';
 const warning = 'User experiment rollouts bugged and API is not up-to-date yet! Fix is coming soon:tm:.'; // Warning message to show when the API is down e.g. "The API is down, please try again later"
 
 function endpoint(path) {
-  return `${baseUrl}/${path}`;
+    return `${baseUrl}/${path}`;
 };
 
 async function experimentsAPI(command, string) {
@@ -17,7 +17,7 @@ async function experimentsAPI(command, string) {
         let one = JSON.stringify(data, 0, 1);
         let none = JSON.stringify(data);
         let limit = 1970;
-        
+
         if (two.length <= limit) return two;
         else if (one.length <= limit) return one;
         else return none.slice(0, limit);
@@ -38,11 +38,11 @@ async function experimentsAPI(command, string) {
             if (!args[0]) return ":x: Enter an experiment id";
 
             let experiment = await fetch(endpoint(`experiments/${args[0]}`)).then(res => res.json()).catch(() => ":x: This experiment does not exists");
-            
+
             if (typeof experiment === "string") {
                 let all = await fetch(endpoint('experiments')).then(res => res.json());
                 let found = all.filter(e => e.id.includes(args[0].toLowerCase()))[0];
-                
+
                 if (found) return `Experiment id does not exists but found this${args[1] ? ` from **\`${found.id}\`**` : ""}:\n\`\`\`json\n${send(args[1] ? found[args[1]] : found)}\n\`\`\``;
                 else return experiment;
             } else {
@@ -69,7 +69,7 @@ async function experimentsAPI(command, string) {
             for (var id of ids) {
                 if (!results[0]?.includes("exists")) {
                     let result = await fetch(endpoint(`experiments/check/${args[0]}/${id}`)).then(res => res.json()).catch(() => `❌ This experiment does not exists`);
-                    
+
                     if (typeof result === "string") results.push(result);
                     else {
                         if (raw) results.push(`**\`${id}:\`**\`\`\`json\n${send(result)}\n\`\`\``);
@@ -80,6 +80,6 @@ async function experimentsAPI(command, string) {
 
             return results.map(r => r).join("\n");
         default:
-            return `${warning ? `⚠️ **${warning}**\n\n` : ''}**\`<>\`** Required **|** **\`[]\`** Optional\n\n> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n**Script made by \`✨Tolgchu✨#1452\`:** https://github.com/Tolga1452/assyst-tags#experiments-api\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
+            return `${warning ? `⚠️ **${warning}**\n\n` : ''}**\`<>\`** Required **|** **\`[]\`** Optional\n\n> **\`-t ${command} search [query]\`:** Searches all experiments and returns ids (put \`raw\` before the \`[query]\` for the raw response)\n> **\`-t ${command} get <experimentId> [field]\`:** Returns an experiment data or a single field of the data\n> **\`-t ${command} check <experimentId> <ids>\`:** Checks whether an experiment eligible for the server/user (put \`raw\` before \`<ids>\` for raw response)\n\n**API made by \`syndicated#6591\`:** https://experiments.dscrd.workers.dev\n**Script made by \`✨Tolgchu✨#1452\`:** <https://github.com/discordexperimenthub/assyst-tags#experiments-api>\n\nAnd don't forget to join our server: https://discord.gg/SKVAn3QXJF`;
     };
 };
