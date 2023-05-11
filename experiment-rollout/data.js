@@ -94,16 +94,13 @@ const data = {
             }
         ]
     },
-    birthday_activites: {
-        rate: 0,
-        experimentType: 1,
-        rolloutType: 0
-    },
     jamspace: {
-        rolloutType: 3
+        rolloutType: 3,
+        timestamp: 1685836800
     },
     color_together: {
-        rolloutType: 3
+        rolloutType: 3,
+        timestamp: 1686441600
     },
     voice_messages_server: {
         rate: 100,
@@ -125,5 +122,9 @@ const data = {
         rate: 50,
         experimentType: 0,
         rolloutType: 0
+    },
+    putt_party_paradise: {
+        rolloutType: 3,
+        timestamp: 1684713600
     }
 };
