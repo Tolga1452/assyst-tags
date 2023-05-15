@@ -130,6 +130,26 @@ const data = {
     putt_party_paradise: {
         rolloutType: 2,
         timestamp: 1684713600
+    },
+    birthday_activities: {
+        rate: 0,
+        rolloutType: 0
+    },
+    birthday_avatar_decorations: {
+        rolloutType: 2,
+        timestamp: 1684108800
+    },
+    free_activities: {
+        rolloutType: 2,
+        timestamp: 1684108800
+    },
+    activities_in_dms: {
+        rate: 100,
+        rolloutType: 0
+    },
+    nitro_trials: {
+        rolloutType: 2,
+        timestamp: 1684108800
     }
 };
 
