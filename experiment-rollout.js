@@ -1,4 +1,4 @@
-const lastUpdate = '1684151985'; //Unix timestamp as seconds
+const lastUpdate = '1684176163'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -132,8 +132,9 @@ const data = {
         timestamp: 1684713600
     },
     birthday_activities: {
-        rate: 0,
-        rolloutType: 0
+        rate: 100,
+        rolloutType: 0,
+        experimentType: 1,
     },
     birthday_avatar_decorations: {
         rolloutType: 2,
@@ -145,11 +146,24 @@ const data = {
     },
     activities_in_dms: {
         rate: 100,
-        rolloutType: 0
+        rolloutType: 0,
+        experimentType: 1,
     },
     nitro_trials: {
         rolloutType: 2,
         timestamp: 1684108800
+    },
+    markdown: {
+        rate: 10,
+        ranges: [[9000, 10000]],
+        experimentType: 0,
+        rolloutType: 0,
+        notes: [
+            {
+                title: 'Treatments',
+                text: 'Current rollout does not include **masked links**.'
+            }
+        ]
     }
 };
 
