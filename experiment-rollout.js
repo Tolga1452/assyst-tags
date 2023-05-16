@@ -68,15 +68,15 @@ const data = {
         rolloutType: 1,
         priority: [
             {
-                status: 1,
+                status: 2,
                 name: 'Verified bots (server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
-                status: 0,
+                status: 2,
                 name: 'Brands'
             },
             {
-                status: 0,
+                status: 1,
                 name: 'Discord staff'
             },
             {
@@ -164,6 +164,13 @@ const data = {
                 text: 'Current rollout does not include **masked links**.'
             }
         ]
+    },
+    pronouns: {
+        experimentType: 1,
+        rolloutType:0,
+        rate: 1,
+        ranges: [[0, 10000]], // im not sure this i used the get tag and i used what came up
+        timestamp: 1649280172
     }
 };
 
