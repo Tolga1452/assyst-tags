@@ -68,7 +68,7 @@ const data = {
         rolloutType: 1,
         priority: [
             {
-                status: 2,
+                status: 1,
                 name: 'Verified bots (server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
