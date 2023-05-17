@@ -1,4 +1,4 @@
-const lastUpdate = '1684176163'; //Unix timestamp as seconds
+const lastUpdate = '1684345658'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -116,11 +116,6 @@ const data = {
             }
         ]
     },
-    soundboard: {
-        rate: 100,
-        rolloutType: 0,
-        experimentType: 0
-    },
     server_guide: {
         rate: 50,
         ranges: [[5000, 10000]],
@@ -154,22 +149,22 @@ const data = {
         timestamp: 1684108800
     },
     markdown: {
-        rate: 10,
-        ranges: [[9000, 10000]],
+        rate: 25,
+        ranges: [[7500, 10000]],
         experimentType: 0,
         rolloutType: 0,
         notes: [
             {
-                title: 'Treatments',
+                title: 'Masked Links',
                 text: 'Current rollout does not include **masked links**.'
             }
         ]
     },
     pronouns: {
         experimentType: 1,
-        rolloutType:0,
+        rolloutType: 0,
         rate: 1,
-        ranges: [[0, 10000]], // im not sure this i used the get tag and i used what came up
+        ranges: [[null, null]],
         timestamp: 1649280172
     }
 };
@@ -209,13 +204,13 @@ async function experimentRollout(command, id) {
 
     if (rolloutType === -1) description = `<:dehAdmin:1102308503479140562> This feature's rollout has reverted due to some security issues. Restart date is unknown.`;
     else if (rolloutType === 1) description = `<:ticket:1100811774229495858> This feature is very slowly rolling out to all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} from old to new ones, this process may take a few months.`;
-    else if (rolloutType === 2) description = `🥳 This feature is a part of **Birthday Activities**. Releases ||**<t:${timestamp}:R>**||.`;
+    else if (rolloutType === 2) description = `🥳 This feature is a part of **Birthday Activities**. Releases/Released ||**<t:${timestamp}:R>**||.`;
     else if (rolloutType === 3) description = `<:DEH:1098207702682980404> This feature is currently in beta/alpha testing.`;
     else if (rolloutType === 0) {
         if (rate === 0) description = `<:DEH:1098207702682980404> This feature has not started to rolling out yet.`;
         else if (rate === 100) description = `🎉 This feature has rolled out to all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'}!`;
-        else description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')}.`;
+        else description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
     };
 
-    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}`;
+    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 100) - lastUpdate) > 86400 ? '⚠️ ' : ''}**Last Update: <t:${lastUpdate}:R>**`;
 };
