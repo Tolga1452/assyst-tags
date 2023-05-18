@@ -81,7 +81,7 @@ const data = {
                 name: 'Discord staff'
             },
             {
-                status: 0,
+                status: 1,
                 name: 'Partnered and verified server owners'
             },
             {
