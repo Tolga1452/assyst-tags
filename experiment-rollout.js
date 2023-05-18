@@ -180,17 +180,10 @@ const data = {
     }
 };
 
-const message = {
-    guild_id: '1089540433010491392',
-    author: {
-        id: '329671025312923648'
-    }
-}
-
 async function experimentRollout(command, featureId) {
     featureId = featureId.toLowerCase();
 
-    if (!featureId) return `## Usage\n\`-t ${command} <feature_id>\nOr you can use an experiment id.\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n## Last Update\n> ${lastUpdate.details}\non <t:${lastUpdate.timestamp}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
+    if (!featureId) return `## Usage\n\`-t ${command} <feature_id>\`\nOr you can use an experiment id.\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n## Last Update\n> ${lastUpdate.details}\non <t:${lastUpdate.timestamp}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
 
     let experiment = Object.entries(data).find(([fId, eId]) => fId === featureId || eId === featureId)?.[1] ?? null;
 
@@ -233,33 +226,5 @@ async function experimentRollout(command, featureId) {
         else description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
     };
 
-    let check = false;
-    let position = 0;
-
-    if (experimentType !== 2 && id) {
-        const res = await fetch(`https://discord-experiments.glitch.me/experiments/check/${id}/${experimentType === 0 ? message.guild_id : message.author.id}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ ranges }),
-        }).then(async r => {
-            let a;
-
-            try {
-                a = await r.json();
-            } catch (e) {
-                a = await r.text();
-            };
-
-            return a;
-        });
-
-        if (typeof res === 'string') return res;
-
-        check = res.result;
-        position = res.position;
-    };
-
-    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must __not__ have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')}` : requirement.type === 2 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${experimentType !== 2 && id ? `\n${check ? '✅' : '❌'} This ${experimentType === 0 ? 'server' : 'user'} ${check ? 'can' : 'cannot'} access to this feature. ||Position: ${position}||` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository:\n<https://github.com/discordexperimenthub/assyst-tags>` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
+    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must __not__ have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')}` : requirement.type === 2 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${experimentType !== 2 && id ? `${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository:\n<https://github.com/discordexperimenthub/assyst-tags>` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
 };
