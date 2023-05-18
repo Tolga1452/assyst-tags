@@ -149,7 +149,7 @@ const data = {
         rolloutType: 2,
         timestamp: 1684108800
     },
-    markdown: {
+    markdown_server: {
         rate: 50,
         ranges: [[5000, 10000]],
         experimentType: 0,
@@ -177,8 +177,8 @@ async function experimentRollout(command, id) {
     if (!data[id]) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
 
     let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp } = data[id];
-    let totalServers = 6700000;
-    let totalUsers = 196200000;
+    let totalServers = 19000000;
+    let totalUsers = 150000000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
     let fixed = [];
     let group = [];
