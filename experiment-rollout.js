@@ -1,4 +1,4 @@
-const lastUpdate = '1684345658'; //Unix timestamp as seconds
+const lastUpdate = '1684437968'; //Unix timestamp as seconds
 
 /**
   * Experiment Types

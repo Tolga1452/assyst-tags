@@ -5,6 +5,7 @@ Advanced tag scripts for [Assyst](https://jacher.io/assyst) bot.
 # Tags
 
 - [Experiments API](#experiments-api)
+- [Experiment Rollout](#experiment-rollout)
 
 ## Experiments API
 
