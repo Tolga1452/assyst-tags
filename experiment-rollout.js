@@ -1,8 +1,7 @@
 const lastUpdate = { //This object will be updated when the data object is updated
-    timestamp: 0, //Unix timestamp as seconds
+    timestamp: 1684437968, //Unix timestamp as seconds
     details: '`markdown` rollout has updated and renamed to `markdown_server`.'
 };
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 /**
   * Experiment Types
