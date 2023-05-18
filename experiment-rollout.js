@@ -17,9 +17,10 @@ const lastUpdate = { //This object will be updated when the data object is updat
   * 3: In beta/alpha testing
   * 
   * Requirement Types
-  * 0: Server must not have features
-  * 1: Maximum member count
-  * 2: Member count range
+  * 0: Server must NOT have features
+  * 1: Server must have features
+  * 2: Maximum member count
+  * 3: Member count range
   * 
   * Priority Types
   * 0: Not started
@@ -41,7 +42,7 @@ const data = {
                 ranges: [[0, 10000]]
             },
             {
-                type: 1,
+                type: 2,
                 value: 100,
                 rate: 11,
                 ranges: [
@@ -50,7 +51,7 @@ const data = {
                 ]
             },
             {
-                type: 2,
+                type: 3,
                 value: [101, 200],
                 rate: 10,
                 ranges: [[0, 1000]]
@@ -116,7 +117,7 @@ const data = {
         rolloutType: 0,
         requirements: [
             {
-                type: 1,
+                type: 2,
                 value: 200,
                 rate: 100,
                 ranges: [[0, 10000]]
@@ -236,5 +237,5 @@ async function experimentRollout(command, featureId) {
         if (position >= start && position <= end) check = true;
     };
 
-    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${experimentType !== 2 && id ? `\n${check ? '✅' : '❌'} This ${experimentType === 0 ? 'server' : 'user'} ${check ? 'can' : 'cannot'} access to this feature. ||Position: ${position}||` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository:\n<https://github.com/discordexperimenthub/assyst-tags>` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
+    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must __not__ have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')}` : requirement.type === 2 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${experimentType !== 2 && id ? `\n${check ? '✅' : '❌'} This ${experimentType === 0 ? 'server' : 'user'} ${check ? 'can' : 'cannot'} access to this feature. ||Position: ${position}||` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository:\n<https://github.com/discordexperimenthub/assyst-tags>` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
 };
