@@ -77,11 +77,11 @@ const data = {
                 name: 'Brands'
             },
             {
-                status: 1,
+                status: 2,
                 name: 'Discord staff'
             },
             {
-                status: 0,
+                status: 1,
                 name: 'Partnered and verified server owners'
             },
             {
