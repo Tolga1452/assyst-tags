@@ -1,4 +1,7 @@
-const lastUpdate = '1684345658'; //Unix timestamp as seconds
+const lastUpdate = { //This object will be updated when the data object is updated
+    timestamp: 0, //Unix timestamp as seconds
+    details: '`markdown` rollout has updated and renamed to `markdown_server`.'
+};
 
 /**
   * Experiment Types
@@ -25,6 +28,7 @@ const lastUpdate = '1684345658'; //Unix timestamp as seconds
   */
 const data = {
     clyde_ai: {
+        id: '2023-03_clyde_ai',
         rate: 12,
         ranges: [[0, 1200]],
         experimentType: 0,
@@ -54,12 +58,14 @@ const data = {
         ]
     },
     split_permissions: {
+        id: '2023-03_split_permissions',
         rate: 1,
         ranges: [[0, 100]],
         experimentType: 0,
         rolloutType: 0
     },
     channel_summaries: {
+        id: '2023-02_p13n_summarization',
         experimentType: 0,
         rolloutType: 3
     },
@@ -104,6 +110,7 @@ const data = {
         timestamp: 1686441600
     },
     voice_messages_server: {
+        id: '2023-01_voice_messages',
         rate: 100,
         experimentType: 0,
         rolloutType: 0,
@@ -117,6 +124,7 @@ const data = {
         ]
     },
     server_guide: {
+        id: '2023-02_onboarding_home_admin',
         rate: 50,
         ranges: [[5000, 10000]],
         experimentType: 0,
@@ -140,6 +148,7 @@ const data = {
         timestamp: 1684108800
     },
     activities_in_dms: {
+        id: '2023-01_activities_in_gdm',
         rate: 100,
         rolloutType: 0,
         experimentType: 1,
@@ -148,9 +157,10 @@ const data = {
         rolloutType: 2,
         timestamp: 1684108800
     },
-    markdown: {
-        rate: 25,
-        ranges: [[7500, 10000]],
+    markdown_server: {
+        id: '2023-03_improved_message_markdown_guild',
+        rate: 50,
+        ranges: [[5000, 10000]],
         experimentType: 0,
         rolloutType: 0,
         notes: [
@@ -161,23 +171,30 @@ const data = {
         ]
     },
     pronouns: {
+        id: '2022-01_pronouns',
         experimentType: 1,
         rolloutType: 0,
         rate: 1,
-        ranges: [[null, null]],
-        timestamp: 1649280172
+        ranges: [[null, null]]
     }
 };
 
-async function experimentRollout(command, id) {
-    id = id.toLowerCase();
+const mmh3 = (expData) => {
+    for (var e, t = `${expData.id}:${expData.experimentType === 0 ? message.guild_id : message.author.id}`, a = 0, c = 3432918353, h = 461845907, r = 0; r < t.length - t.length % 4; r += 4) e = 5 * (65535 & (e = (e ^= a = (65535 & (a = (a = (65535 & (a = 255 & t.charCodeAt(r) | (255 & t.charCodeAt(r + 1)) << 8 | (255 & t.charCodeAt(r + 2)) << 16 | (255 & t.charCodeAt(r + 3)) << 24)) * c + (((a >>> 16) * c & 65535) << 16)) << 15 | a >>> 17)) * h + (((a >>> 16) * h & 65535) << 16)) << 13 | e >>> 19)) + ((5 * (e >>> 16) & 65535) << 16) + 3864292196; switch (a = 0, t.length % 4) { case 3: a ^= (255 & t.charCodeAt(r + 2)) << 16; case 2: a ^= (255 & t.charCodeAt(r + 1)) << 8; case 1: e ^= a = (65535 & (a = (a = (65535 & (a ^= 255 & t.charCodeAt(r))) * c + (((a >>> 16) * c & 65535) << 16)) << 15 | a >>> 17)) * h + (((a >>> 16) * h & 65535) << 16) } e ^= t.length, e = 2246822507 * (65535 & (e ^= e >>> 16)) + ((2246822507 * (e >>> 16) & 65535) << 16), e = 3266489909 * (65535 & (e ^= e >>> 13)) + ((3266489909 * (e >>> 16) & 65535) << 16), e ^= e >>> 16, (e >>>= 0) % 1e4;
+};
 
-    if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
-    if (!data[id]) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
+async function experimentRollout(command, featureId) {
+    featureId = featureId.toLowerCase();
 
-    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp } = data[id];
-    let totalServers = 6700000;
-    let totalUsers = 196200000;
+    if (!featureId) return `## Usage\n\`-t ${command} <feature_id>\nOr you can use an experiment id.\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n## Last Update\n> ${lastUpdate.details}\non <t:${lastUpdate.timestamp}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
+
+    let experiment = Object.entries(data).find((fId, eId) => fId === featureId || eId === featureId)[1] ?? null;
+
+    if (!experiment) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
+
+    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, id } = experiment;
+    let totalServers = 19000000;
+    let totalUsers = 15000000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
     let fixed = [];
     let group = [];
@@ -212,5 +229,12 @@ async function experimentRollout(command, id) {
         else description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
     };
 
-    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate) > 86400 ? '⚠️ ' : ''}**Last Update: <t:${lastUpdate}:R>**`;
+    let check = false;
+    let position = mmh3(experiment);
+
+    for ((start, end) of ranges) {
+        if (position >= start && position <= end) check = true;
+    };
+
+    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${experimentType !== 2 && id ? `\n${check ? '✅' : '❌'} This ${experimentType === 0 ? 'server' : 'user'} ${check ? 'can' : 'cannot'} access to this feature. ||Position: ${position}||` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository:\n<https://github.com/discordexperimenthub/assyst-tags>` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
 };
