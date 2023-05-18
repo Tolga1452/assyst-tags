@@ -1,7 +1,4 @@
-const lastUpdate = { //This object will be updated when the data object is updated
-    timestamp: 1684437968, //Unix timestamp as seconds
-    details: '`markdown` rollout has updated and renamed to `markdown_server`.'
-};
+const lastUpdate = '1684345658'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -29,7 +26,6 @@ const lastUpdate = { //This object will be updated when the data object is updat
   */
 const data = {
     clyde_ai: {
-        id: '2023-03_clyde_ai',
         rate: 12,
         ranges: [[0, 1200]],
         experimentType: 0,
@@ -59,14 +55,12 @@ const data = {
         ]
     },
     split_permissions: {
-        id: '2023-03_split_permissions',
         rate: 1,
         ranges: [[0, 100]],
         experimentType: 0,
         rolloutType: 0
     },
     channel_summaries: {
-        id: '2023-02_p13n_summarization',
         experimentType: 0,
         rolloutType: 3
     },
@@ -111,13 +105,12 @@ const data = {
         timestamp: 1686441600
     },
     voice_messages_server: {
-        id: '2023-01_voice_messages',
         rate: 100,
         experimentType: 0,
         rolloutType: 0,
         requirements: [
             {
-                type: 2,
+                type: 1,
                 value: 200,
                 rate: 100,
                 ranges: [[0, 10000]]
@@ -125,7 +118,6 @@ const data = {
         ]
     },
     server_guide: {
-        id: '2023-02_onboarding_home_admin',
         rate: 50,
         ranges: [[5000, 10000]],
         experimentType: 0,
@@ -149,7 +141,6 @@ const data = {
         timestamp: 1684108800
     },
     activities_in_dms: {
-        id: '2023-01_activities_in_gdm',
         rate: 100,
         rolloutType: 0,
         experimentType: 1,
@@ -158,8 +149,7 @@ const data = {
         rolloutType: 2,
         timestamp: 1684108800
     },
-    markdown_server: {
-        id: '2023-03_improved_message_markdown_guild',
+    markdown: {
         rate: 50,
         ranges: [[5000, 10000]],
         experimentType: 0,
@@ -172,26 +162,23 @@ const data = {
         ]
     },
     pronouns: {
-        id: '2022-01_pronouns',
         experimentType: 1,
         rolloutType: 0,
         rate: 1,
-        ranges: [[null, null]]
+        ranges: [[null, null]],
+        timestamp: 1649280172
     }
 };
 
-async function experimentRollout(command, featureId) {
-    featureId = featureId.toLowerCase();
+async function experimentRollout(command, id) {
+    id = id.toLowerCase();
 
-    if (!featureId) return `## Usage\n\`-t ${command} <feature_id>\`\nOr you can use an experiment id.\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n## Last Update\n> ${lastUpdate.details}\non <t:${lastUpdate.timestamp}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
+    if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
+    if (!data[id]) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
 
-    let experiment = Object.entries(data).find(([fId, eId]) => fId === featureId || eId === featureId)?.[1] ?? null;
-
-    if (!experiment) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
-
-    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, id } = experiment;
-    let totalServers = 19000000;
-    let totalUsers = 15000000;
+    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp } = data[id];
+    let totalServers = 6700000;
+    let totalUsers = 196200000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
     let fixed = [];
     let group = [];
@@ -226,5 +213,5 @@ async function experimentRollout(command, featureId) {
         else description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
     };
 
-    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must __not__ have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')}` : requirement.type === 2 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate.timestamp) > 86400 ? `⚠️ It had been over 24 hours since the latest update (<t:${lastUpdate.timestamp}:R>)! Data of the experiment may be not up-to-date. You can create a pull request or issue from our GitHub repository.` : `**Last Update: <t:${lastUpdate.timestamp}:R>**`}`;
+    return `# ${id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ')}\n${description}${priority?.length > 0 ? `\n\n## Rollout Status\n${priority.map(p => `${p.status === 0 ? '<:unchecked:1078022830828048485>' : p.status === 1 ? '<:dehMiniContributor:1102308508466151494>' : '<:checked:1062424010652123229>'} ${p.name}`).join('\n')}` : ''}${requirements?.length > 0 ? `\n\n## Requirements\n${requirements?.map(requirement => `- ${requirement.type === 0 ? `Server must __not__ have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')} feature(s)` : requirement.type === 1 ? `Server must have ${requirement.value?.map(feature => `\`${feature}\``).join(', ')}` : requirement.type === 2 ? `Server must have maximum ${requirement.value} members` : `Server must have ${requirement.value[0]}-${requirement.value[1]} members`} for **${requirement.rate}%** (${requirement.ranges?.map(range => `\`${range[0]} - ${range[1]}\``).join(', ')})`).join('\n')}` : ''}${notes?.length > 0 ? `\n\n## Notes\n${notes.map(note => `### ${note.title}\n${note.text}`).join('\n\n')}` : ''}\n\n${(Math.floor(Date.now() / 1000) - lastUpdate) > 86400 ? '⚠️ ' : ''}**Last Update: <t:${lastUpdate}:R>**`;
 };
