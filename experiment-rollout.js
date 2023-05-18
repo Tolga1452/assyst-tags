@@ -243,7 +243,19 @@ async function experimentRollout(command, featureId) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ ranges }),
-        }).then(r => r.json());
+        }).then(async r => {
+            let a;
+
+            try {
+                a = await r.json();
+            } catch (e) {
+                a = await r.text();
+            };
+
+            return a;
+        });
+
+        if (typeof res === 'string') return res;
 
         check = res.result;
         position = res.position;
