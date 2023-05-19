@@ -150,8 +150,8 @@ const data = {
         timestamp: 1684108800
     },
     markdown_server: {
-        rate: 50,
-        ranges: [[5000, 10000]],
+        rate: 0,
+        ranges: [[0, 0]],
         experimentType: 0,
         rolloutType: 0,
         notes: [
@@ -165,8 +165,7 @@ const data = {
         experimentType: 1,
         rolloutType: 0,
         rate: 1,
-        ranges: [[null, null]],
-        timestamp: 1649280172
+        ranges: [[null, null]]
     }
 };
 
