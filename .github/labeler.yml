@@ -1,0 +1,5 @@
+'scripts:experiments-api':
+- experiments-api.js
+
+'scripts:experiment-rollout':
+- experiment-rollout.js
