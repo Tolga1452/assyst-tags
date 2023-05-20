@@ -104,7 +104,7 @@ const data = {
             }
         ]
     },
-    },
+
     jamspace: {
         rolloutType: 2,
         timestamp: 1685836800
