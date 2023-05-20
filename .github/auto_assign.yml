@@ -1,0 +1,13 @@
+addReviewers: true
+
+addAssignees: true
+
+reviewers: 
+  - Lordcobcob
+  - Pukimaa
+  - SamomenX
+  - sndctd
+  - tayron1
+  - Tolga1452
+
+numberOfReviewers: 1
