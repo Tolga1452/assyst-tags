@@ -1,4 +1,4 @@
-const lastUpdate = '1684615303'; //Unix timestamp as seconds
+const lastUpdate = '1684619201'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -194,6 +194,60 @@ const data = {
         rolloutType: 0,
         rate: 1,
         ranges: [[null, null]]
+    },
+    clyde_dm: {
+        experimentType: 1,
+        rolloutType: 0,
+        rate: 50,
+        ranges: [[0, 5000]]
+    },
+    automod_ai: {
+        experimentType: 0,
+        rolloutType: 0,
+        rate: 0,
+    },
+    channel_emojis: {
+        experimentType: 1,
+        rolloutType: 0,
+        rate: 0,
+        notes: [
+            {
+                title: 'Other Ways',
+                text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. Also, it randomly appears on desktop.'
+            }
+        ]
+    },
+    lockdown: {
+        experimentType: 0,
+        rolloutType: 0,
+        rate: 0
+    },
+    new_safety_setup: {
+        experimentType: 0,
+        rolloutType: 0,
+        rate: 100,
+        requirements: [
+            {
+                type: 1,
+                value: ['COMMUNITY'],
+                rate: 100,
+                ranges: [[0, 10000]]
+            }
+        ]
+    },
+    media_channels: {
+        experimentType: 0,
+        rolloutType: 0,
+        rate: 25,
+        ranges: [[0, 2500]],
+        requirements: [
+            {
+                type: 1,
+                value: ['ROLE_SUBSCRIPTIONS_ENABLED'],
+                rate: 25,
+                ranges: [[0, 2500]]
+            }
+        ]
     }
 };
 
