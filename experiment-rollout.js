@@ -1,29 +1,5 @@
 const lastUpdate = '1684619201'; //Unix timestamp as seconds
 
-/**
-  * Experiment Types
-  * 0: Server
-  * 1: User
-  * 2: Server and User
-  * 
-  * Rollout Types
-  * -1: Rollout has reverted due to security issues
-  * 0: Regular rollout
-  * 1: Very slow rollout from old to new
-  * 2: Birthday activities feature
-  * 3: In beta/alpha testing
-  * 
-  * Requirement Types
-  * 0: Server must NOT have features
-  * 1: Server must have features
-  * 2: Maximum member count
-  * 3: Member count range
-  * 
-  * Priority Types
-  * 0: Not started
-  * 1: Rolling out
-  * 2: Rolled out
-  */
 const data = {
     clyde_ai: {
         rate: 12,
