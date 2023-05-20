@@ -1,4 +1,4 @@
-const lastUpdate = '1684521534'; //Unix timestamp as seconds
+const lastUpdate = '1684604523'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -83,6 +83,14 @@ const data = {
             {
                 status: 1,
                 name: 'Partnered and verified server owners (includes old ones)'
+            },
+            {
+                status: 0,
+                name: 'Moderator Program Alumni'
+            },
+            {
+                status: 0,
+                name: 'HypeSquad Event'
             },
             {
                 status: 0,
