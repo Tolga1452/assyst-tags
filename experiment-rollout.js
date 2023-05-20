@@ -127,7 +127,7 @@ const data = {
     },
      automod_profile: {
         rate: 30,
-        ranges: [[3000, 6000]]
+        ranges: [[3000, 6000]],
         experimentType: 0,
         rolloutType: 0,
         requirements: [
