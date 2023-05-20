@@ -104,6 +104,10 @@ const data = {
             }
         ]
     },
+    
+
+
+    },
     jamspace: {
         rolloutType: 2,
         timestamp: 1685836800
@@ -124,6 +128,31 @@ const data = {
                 ranges: [[0, 10000]]
             }
         ]
+    },
+     automod_on_user_profile: {
+
+        rate: 30,
+
+        experimentType: 0,
+
+        rolloutType: 0,
+
+        requirements: [
+
+            {
+
+                type: 1,
+
+                value: ['COMMUNITY'],
+
+                rate: 30,
+
+                ranges: [[3000, 6000]]
+
+            }
+
+        ]
+
     },
     server_guide: {
         rate: 50,
