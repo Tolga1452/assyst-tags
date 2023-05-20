@@ -84,14 +84,14 @@ const data = {
                 status: 1,
                 name: 'Partnered and verified server owners (includes old ones)'
             },
-			{
-				status: 0,
-				name: 'Moderator Program Alumni'
-			},
-			{
-				status: 0,
-				name: 'HypeSquad Event'
-			},
+            {
+                status: 0,
+                name: 'Moderator Program Alumni'
+            },
+            {
+                status: 0,
+                name: 'HypeSquad Event'
+            },
             {
                 status: 0,
                 name: 'Everyone else (people who bought Nitro up to March 1, 2023 will be prioritized)'
