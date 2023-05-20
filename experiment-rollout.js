@@ -1,4 +1,4 @@
-const lastUpdate = '1684604523'; //Unix timestamp as seconds
+const lastUpdate = '1684615303'; //Unix timestamp as seconds
 
 /**
   * Experiment Types
@@ -118,7 +118,7 @@ const data = {
         rolloutType: 0,
         requirements: [
             {
-                type: 1,
+                type: 2,
                 value: 200,
                 rate: 100,
                 ranges: [[0, 10000]]
