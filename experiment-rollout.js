@@ -86,7 +86,7 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Moderator Program Alumni'
+                name: 'Moderator Programs Alumni'
             },
             {
                 status: 0,
