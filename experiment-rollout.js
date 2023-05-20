@@ -49,8 +49,8 @@ const data = {
             {
                 type: 3,
                 value: [101, 200],
-                rate: 10,
-                ranges: [[0, 1000]]
+                rate: 1,
+                ranges: [[100, 200]]
             }
         ]
     },
@@ -82,7 +82,7 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Partnered and verified server owners'
+                name: 'Partnered and verified server owners (includes old ones)'
             },
             {
                 status: 0,
@@ -150,8 +150,8 @@ const data = {
         timestamp: 1684108800
     },
     markdown_server: {
-        rate: 0,
-        ranges: [[0, 0]],
+        rate: 50,
+        ranges: [[5000, 10000]],
         experimentType: 0,
         rolloutType: 0,
         notes: [
