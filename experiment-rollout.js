@@ -70,7 +70,7 @@ const data = {
         priority: [
             {
                 status: 1,
-                name: 'Verified bots (server count wins name conflicts, other ones will get their discriminator appended)'
+                name: 'Verified sbots (server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
                 status: 2,
