@@ -82,15 +82,15 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Partnered and verified server owners (includes old ones)'
+                name: 'Partnered and verified server owners (includes old ones + some content creators)'
             },
             {
                 status: 0,
-                name: 'Moderator Program Alumni'
+                name: 'Moderator programs alumnis'
             },
             {
                 status: 0,
-                name: 'HypeSquad Event'
+                name: 'HypeSquad event owners'
             },
             {
                 status: 0,
