@@ -86,11 +86,11 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Moderator Program Alumni'
+                name: 'Moderator Programs Alumnis'
             },
             {
                 status: 0,
-                name: 'HypeSquad Event'
+                name: 'HypeSquad Event Owners'
             },
             {
                 status: 0,
