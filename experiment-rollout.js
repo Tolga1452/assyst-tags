@@ -46,7 +46,7 @@ const data = {
         priority: [
             {
                 status: 1,
-                name: 'Verified bots (server count wins name conflicts, other ones will get their discriminator appended)'
+                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
                 status: 2,
@@ -58,7 +58,7 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Partnered and verified server owners (includes old ones + some content creators)'
+                name: 'Partnered and verified server owners (Includes old ones + some content creators)'
             },
             {
                 status: 0,
@@ -70,7 +70,7 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Everyone else (people who bought Nitro up to March 1, 2023 will be prioritized)'
+                name: 'Everyone else (People who bought Nitro up to March 1, 2023 will be prioritized)'
             }
         ],
         notes: [
@@ -161,7 +161,7 @@ const data = {
         notes: [
             {
                 title: 'Masked Links',
-                text: 'Current rollout does not include **masked links**.'
+                text: 'Currently, rollouts do not include **masked links**.'
             }
         ]
     },
@@ -189,7 +189,7 @@ const data = {
         notes: [
             {
                 title: 'Other Ways',
-                text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. Also, it randomly appears on desktop.'
+                text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. It also randomly appears on desktop.'
             }
         ]
     },
