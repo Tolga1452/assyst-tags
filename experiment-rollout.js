@@ -117,7 +117,7 @@ const data = {
                 value: [2, 50],
                 rate: 50,
                 ranges: [[1, 50]]
-            },
+            }
         ]
     },
     
