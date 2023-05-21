@@ -1,4 +1,4 @@
-const lastUpdate = '1684619201'; //Unix timestamp as seconds
+const lastUpdate = '1684669888'; //Unix timestamp as seconds
 
 const data = {
     clyde_ai: {
