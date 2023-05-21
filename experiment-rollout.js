@@ -224,6 +224,11 @@ const data = {
                 ranges: [[0, 2500]]
             }
         ]
+    },
+    member_safety: {
+        experimentType: 0,
+        rolloutType: 0,
+        rate: 0,
     }
 };
 
