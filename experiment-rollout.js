@@ -46,7 +46,7 @@ const data = {
         priority: [
             {
                 status: 1,
-                name: 'Verified bots (server count wins name conflicts, other ones will get their discriminator appended)'
+                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
                 status: 2,
@@ -58,7 +58,7 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Partnered and verified server owners (includes old ones + some content creators)'
+                name: 'Partnered and verified server owners (Includes old ones + some content creators)'
             },
             {
                 status: 0,
@@ -70,7 +70,7 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Everyone else (people who bought Nitro up to March 1, 2023 will be prioritized)'
+                name: 'Everyone else (People who bought Nitro up to March 1, 2023 will be prioritized)'
             }
         ],
         notes: [
@@ -101,6 +101,26 @@ const data = {
             }
         ]
     },
+    guest_voice_invites: {
+        rate: 50,
+        experimentType: 0,
+        rolloutType: 0,
+        requirements: [
+            {
+                type: 0,
+                value: ['VANITY URL'],
+                rate: 50,
+                ranges: [[100, 200] [600, 1000] [1500, 2000] [3000, 4000] [5000, 6000] [7000, 8000] [9000, 10000]]
+            },
+            {
+                type: 3,
+                value: [2, 50],
+                rate: 50,
+                ranges: [[1, 50]]
+            },
+        ]
+    },
+    
     automod_profile: {
         rate: 30,
         ranges: [[3000, 6000]],
@@ -161,7 +181,7 @@ const data = {
         notes: [
             {
                 title: 'Masked Links',
-                text: 'Current rollout does not include **masked links**.'
+                text: 'Currently, rollouts do not include **masked links**.'
             }
         ]
     },
@@ -189,7 +209,7 @@ const data = {
         notes: [
             {
                 title: 'Other Ways',
-                text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. Also, it randomly appears on desktop.'
+                text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. It also randomly appears on desktop.'
             }
         ]
     },
