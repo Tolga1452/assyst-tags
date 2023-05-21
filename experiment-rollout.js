@@ -101,26 +101,6 @@ const data = {
             }
         ]
     },
-    automod_profile: {
-        rate: 30,
-        ranges: [[3000, 6000]],
-        experimentType: 0,
-        rolloutType: 0,
-        requirements: [
-            {
-                type: 0,
-                value: ['AUTOMOD_TRIGGER_USER_PROFILE'],
-                rate: 100,
-                ranges: [[0, 10000]]
-            },
-            {
-                type: 1,
-                value: ['COMMUNITY'],
-                rate: 30,
-                ranges: [[3000, 6000]]
-            }
-        ]
-    },
     server_guide: {
         rate: 50,
         ranges: [[5000, 10000]],
