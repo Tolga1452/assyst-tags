@@ -108,7 +108,7 @@ const data = {
         rolloutType: 0,
         requirements: [
             {
-                type: 1,
+                type: 0,
                 value: ['AUTOMOD_TRIGGER_USER_PROFILE'],
                 rate: 100,
                 ranges: [[0, 10000]]
