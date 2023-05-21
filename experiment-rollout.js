@@ -101,26 +101,6 @@ const data = {
             }
         ]
     },
-    guest_voice_invites: {
-        rate: 50,
-        experimentType: 0,
-        rolloutType: 0,
-        requirements: [
-            {
-                type: 0,
-                value: ['VANITY URL'],
-                rate: 50,
-                ranges: [[100, 200] [600, 1000] [1500, 2000] [3000, 4000] [5000, 6000] [7000, 8000] [9000, 10000]]
-            },
-            {
-                type: 3,
-                value: [2, 50],
-                rate: 50,
-                ranges: [[1, 50]]
-            }
-        ]
-    },
-    
     automod_profile: {
         rate: 30,
         ranges: [[3000, 6000]],
