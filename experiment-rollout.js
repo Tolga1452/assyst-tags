@@ -1,4 +1,4 @@
-const lastUpdate = '1684669888'; //Unix timestamp as seconds
+const lastUpdate = '1684773648'; //Unix timestamp as seconds
 
 const data = {
     clyde_ai: {
@@ -134,14 +134,14 @@ const data = {
         timestamp: 1684108800
     },
     markdown_server: {
-        rate: 50,
-        ranges: [[5000, 10000]],
+        rate: 100,
+        ranges: [[0, 10000]],
         experimentType: 0,
         rolloutType: 0,
         notes: [
             {
                 title: 'Masked Links',
-                text: 'Currently, rollouts do not include **masked links**.'
+                text: 'Rollouts do not include **masked links**.'
             }
         ]
     },
