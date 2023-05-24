@@ -57,7 +57,7 @@ const data = {
                 name: 'Partnered / verified / ex-partnered / server subscription server owners'
             },
             {
-                status: 1,
+                status: 0,
                 name: 'Verified bots | Ordered by server count'
             },
             {
