@@ -1,4 +1,4 @@
-const lastUpdate = '1684919233'; //Unix timestamp in seconds
+const lastUpdate = '1684944273'; //Unix timestamp in seconds
 
 const data = {
     clyde_ai: {
@@ -46,33 +46,45 @@ const data = {
         priority: [
             {
                 status: 2,
-                name: 'Brands'
+                name: 'Brands | Reserved unless Discord partner'
             },
             {
                 status: 2,
-                name: 'Discord Staff'
+                name: 'Large bots | Criteria unknown | Reservations only'
             },
             {
                 status: 2,
-                name: 'Partnered, subscription-enabled (100USD/mo+), and verified server owners (includes some old partners + some content creators)'
+                name: 'Discord Staff | Staff and personal accounts'
+            },
+            {
+                status: 2,
+                name: 'Partnered / verified / ex-partnered server owners'
             },
             {
                 status: 1,
-                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
+                name: 'Verified bots | Ordered by support server member count'
             },
             {
                 status: 0,
-                name: 'Top (likely 100, by server count) bot developers (Unconfirmed)'
-            },
-            {
-                status: 0,
-                name: 'Everyone else (People who bought Nitro up to March 1, 2023 will be prioritized)'
+                name: 'Everyone else | Ordered by Nitro/Account creation'
             }
         ],
         notes: [
             {
-                title: 'Checking Pomelo Usernames',
-                text: 'Checking Pomelo usernames via API has patched and accounts which tried to check usernames will be IP banned from Discord.'
+                title: 'Checking claimed/reserved names',
+                text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely. Reserved names cannot be checked anymore as the API endpoint has been gated.'
+            },
+            {
+                title: 'Pomelo check bots',
+                text: 'Pomelo check bots operate on either the Friend request api or on lists/databases made before the API endpoint gate. This means that they are inaccurate.'
+            },
+            {
+                title: 'Pomelo reservations',
+                text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
+            },
+            {
+                title: 'Bot name conflicts',
+                text: 'if two or more bots have the same name the bot with the least members in its support server will get the name. The other ones will get their discriminator appended to their name. I.e. @bot1234'
             }
         ]
     },
