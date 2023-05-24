@@ -58,7 +58,7 @@ const data = {
             },
             {
                 status: 2,
-                name: 'Partnered / verified / ex-partnered server owners'
+                name: 'Partnered / verified / ex-partnered / server subscription server owners'
             },
             {
                 status: 1,
@@ -84,7 +84,11 @@ const data = {
             },
             {
                 title: 'Bot name conflicts',
-                text: 'if two or more bots have the same name the bot with the least members in its support server will get the name. The other ones will get their discriminator appended to their name. I.e. @bot1234'
+                text: 'if two or more bots have the same name the bot with the least members in its support server will get the name. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+            },
+            {
+                title: 'Server subscriptions requirement',
+                text: 'You need to make at least 100 USD per month to get priority as a server owner with server subscriptions enabled.'
             }
         ]
     },
