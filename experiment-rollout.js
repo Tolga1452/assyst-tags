@@ -68,7 +68,7 @@ const data = {
 notes: [
     {
         title: 'Checking claimed/reserved names',
-        text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely. Reserved names cannot be checked anymore as the API endpoint has been gated. Bots claiming to check Pomelo reserved names are inaccurate.'
+        text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely.'
     },
     {
         title: 'Pomelo reservations',
@@ -77,10 +77,6 @@ notes: [
     {
         title: 'Bot name conflicts',
         text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
-    },
-    {
-        title: 'Brands and large bots',
-        text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
     }
 ]
     },
