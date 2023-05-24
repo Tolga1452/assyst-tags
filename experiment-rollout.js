@@ -81,10 +81,6 @@ notes: [
     {
         title: 'Brands and large bots',
         text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
-    },
-    {
-        title: 'Ex-partners and MPA',
-        text: 'Some ex-partners and Moderator Programs Alumni members got handpicked for pomelo without meeting the other requirements. This could be because some of them are too notable enough to be impersonated without meeting Discord partner requirements.'
     }
 ]
     },
