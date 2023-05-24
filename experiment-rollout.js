@@ -1,4 +1,4 @@
-const lastUpdate = '1684915255'; //Unix timestamp as seconds
+const lastUpdate = '1684919233'; //Unix timestamp in seconds
 
 const data = {
     clyde_ai: {
@@ -45,28 +45,24 @@ const data = {
         rolloutType: 1,
         priority: [
             {
-                status: 1,
-                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
-            },
-            {
                 status: 2,
                 name: 'Brands'
             },
             {
                 status: 2,
-                name: 'Discord staff'
+                name: 'Discord Staff'
+            },
+            {
+                status: 2,
+                name: 'Partnered, subscription-enabled (100USD/mo+), and verified server owners (includes some old partners + some content creators)'
             },
             {
                 status: 1,
-                name: 'Partnered and verified server owners (Includes old ones + some content creators)'
-            },
-            {
-                status: 1,
-                name: 'Moderator programs alumnis'
+                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
             },
             {
                 status: 0,
-                name: 'HypeSquad event owners'
+                name: 'Top (likely 100, by server count) bot developers (Unconfirmed)'
             },
             {
                 status: 0,
