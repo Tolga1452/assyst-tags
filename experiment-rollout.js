@@ -44,26 +44,26 @@ const data = {
         experimentType: 1,
         rolloutType: 1,
         priority: [
-			{
-				status: 2,
+            {
+                status: 2,
                 name: 'Brands'
             },
             {
-				status: 2,
+                status: 2,
                 name: 'Discord Staff'
             },
-			{
-				status: 2,
-				name: 'Partnered, subscription-enabled (100USD/mo+), and verified server owners (includes some old partners + some content creators)'
-			},
-			{
-				status: 1,
-				name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
-			},
-			{
-				status: 0,
-				name: 'Top (likely 100, by server count) bot developers'
-			},
+            {
+                status: 2,
+                name: 'Partnered, subscription-enabled (100USD/mo+), and verified server owners (includes some old partners + some content creators)'
+            },
+            {
+                status: 1,
+                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
+            },
+            {
+                status: 0,
+                name: 'Top (likely 100, by server count) bot developers'
+            },
             {
                 status: 0,
                 name: 'Everyone else (People who bought Nitro up to March 1, 2023 will be prioritized)'
