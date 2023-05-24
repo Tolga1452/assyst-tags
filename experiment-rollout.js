@@ -1,4 +1,4 @@
-const lastUpdate = '1684919233'; //Unix timestamp in seconds
+const lastUpdate = '1684944273'; //Unix timestamp in seconds
 
 const data = {
     clyde_ai: {
@@ -46,33 +46,57 @@ const data = {
         priority: [
             {
                 status: 2,
-                name: 'Brands'
+                name: 'Brands / Large bots | Reserved unless Discord partner for brands'
             },
             {
                 status: 2,
-                name: 'Discord Staff'
+                name: 'Discord Staff | Staff and personal accounts'
             },
             {
                 status: 2,
-                name: 'Partnered, subscription-enabled (100USD/mo+), and verified server owners (includes some old partners + some content creators)'
-            },
-            {
-                status: 1,
-                name: 'Verified bots (Server count wins name conflicts, other ones will get their discriminator appended)'
+                name: 'Partnered / verified / server subscription server owners'
             },
             {
                 status: 0,
-                name: 'Top (likely 100, by server count) bot developers (Unconfirmed)'
+                name: 'Verified bots | Ordered by server count'
             },
             {
                 status: 0,
-                name: 'Everyone else (People who bought Nitro up to March 1, 2023 will be prioritized)'
+                name: 'Everyone else | Ordered by Nitro/Account creation'
             }
         ],
         notes: [
             {
-                title: 'Checking Pomelo Usernames',
-                text: 'Checking Pomelo usernames via API has patched and accounts which tried to check usernames will be IP banned from Discord.'
+                title: 'Checking claimed/reserved names',
+                text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely. Reserved names cannot be checked anymore as the API endpoint has been gated.'
+            },
+            {
+                title: 'Pomelo check bots',
+                text: 'Pomelo check bots operate on either the Friend request API or on lists/databases made before the API endpoint gate. This means that they are inaccurate.'
+            },
+            {
+                title: 'Pomelo reservations',
+                text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
+            },
+            {
+                title: 'Bot name conflicts',
+                text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+            },
+            {
+                title: 'Server subscriptions requirement',
+                text: 'You need to make at least 100 USD per month to get priority as a server owner with server subscriptions enabled.'
+            },
+            {
+                title: 'Nitro priority',
+                text: 'To keep users from cancelling their Nitro subscription, every Nitro subscriber who has had Nitro since the first of March 2023 will get priority too. It is unknown if those Nitro subscribers come before older accounts or not.'
+            },
+            {
+                title: 'Brands and large bots',
+                text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
+            },
+            {
+                title: 'Ex-partners and MPA',
+                text: 'Some ex-partners and Moderator Programs Alumni members got handpicked for pomelo without meeting the other requirements. This could be because some of them are too notable enough to be impersonated without meeting Discord partner requirements.'
             }
         ]
     },
@@ -103,32 +127,6 @@ const data = {
         experimentType: 0,
         rolloutType: 0
     },
-    putt_party_paradise: {
-        rolloutType: 2,
-        timestamp: 1684713600
-    },
-    birthday_activities: {
-        rate: 100,
-        rolloutType: 0,
-        experimentType: 1,
-    },
-    birthday_avatar_decorations: {
-        rolloutType: 2,
-        timestamp: 1684108800
-    },
-    free_activities: {
-        rolloutType: 2,
-        timestamp: 1684108800
-    },
-    activities_in_dms: {
-        rate: 100,
-        rolloutType: 0,
-        experimentType: 1,
-    },
-    nitro_trials: {
-        rolloutType: 2,
-        timestamp: 1684108800
-    },
     markdown_server: {
         rate: 100,
         ranges: [[0, 10000]],
@@ -153,11 +151,6 @@ const data = {
         rate: 50,
         ranges: [[0, 5000]]
     },
-    automod_ai: {
-        experimentType: 0,
-        rolloutType: 0,
-        rate: 0,
-    },
     channel_emojis: {
         experimentType: 1,
         rolloutType: 0,
@@ -166,24 +159,6 @@ const data = {
             {
                 title: 'Other Ways',
                 text: 'Channel Emojis are enabled by default on Tabs v2 on mobile. It also randomly appears on desktop.'
-            }
-        ]
-    },
-    lockdown: {
-        experimentType: 0,
-        rolloutType: 0,
-        rate: 0
-    },
-    new_safety_setup: {
-        experimentType: 0,
-        rolloutType: 0,
-        rate: 100,
-        requirements: [
-            {
-                type: 1,
-                value: ['COMMUNITY'],
-                rate: 100,
-                ranges: [[0, 10000]]
             }
         ]
     },
@@ -200,11 +175,6 @@ const data = {
                 ranges: [[0, 2500]]
             }
         ]
-    },
-    member_safety: {
-        experimentType: 0,
-        rolloutType: 0,
-        rate: 0,
     }
 };
 
