@@ -44,61 +44,49 @@ const data = {
         experimentType: 1,
         rolloutType: 1,
         priority: [
-            {
-                status: 2,
-                name: 'Brands / Large bots | Reserved unless Discord partner for brands'
-            },
-            {
-                status: 2,
-                name: 'Discord Staff | Staff and personal accounts'
-            },
-            {
-                status: 2,
-                name: 'Partnered / verified / server subscription server owners'
-            },
-            {
-                status: 0,
-                name: 'Verified bots | Ordered by server count'
-            },
-            {
-                status: 0,
-                name: 'Everyone else | Ordered by Nitro/Account creation'
-            }
-        ],
-        notes: [
-            {
-                title: 'Checking claimed/reserved names',
-                text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely. Reserved names cannot be checked anymore as the API endpoint has been gated.'
-            },
-            {
-                title: 'Pomelo check bots',
-                text: 'Pomelo check bots operate on either the Friend request API or on lists/databases made before the API endpoint gate. This means that they are inaccurate.'
-            },
-            {
-                title: 'Pomelo reservations',
-                text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
-            },
-            {
-                title: 'Bot name conflicts',
-                text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
-            },
-            {
-                title: 'Server subscriptions requirement',
-                text: 'You need to make at least 100 USD per month to get priority as a server owner with server subscriptions enabled.'
-            },
-            {
-                title: 'Nitro priority',
-                text: 'To keep users from cancelling their Nitro subscription, every Nitro subscriber who has had Nitro since the first of March 2023 will get priority too. It is unknown if those Nitro subscribers come before older accounts or not.'
-            },
-            {
-                title: 'Brands and large bots',
-                text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
-            },
-            {
-                title: 'Ex-partners and MPA',
-                text: 'Some ex-partners and Moderator Programs Alumni members got handpicked for pomelo without meeting the other requirements. This could be because some of them are too notable enough to be impersonated without meeting Discord partner requirements.'
-            }
-        ]
+    {
+        status: 2,
+        name: 'Brands / Large bots | Reserved unless Discord partner for brands'
+    },
+    {
+        status: 2,
+        name: 'Discord Staff | Staff and personal accounts'
+    },
+    {
+        status: 2,
+        name: 'Partnered / verified / 100+ USD/month server subscription server owners'
+    },
+    {
+        status: 0,
+        name: 'Verified bots | Ordered by server count'
+    },
+    {
+        status: 0,
+        name: 'Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
+    }
+],
+notes: [
+    {
+        title: 'Checking claimed/reserved names',
+        text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely. Reserved names cannot be checked anymore as the API endpoint has been gated. Bots claiming to check Pomelo reserved names are inaccurate.'
+    },
+    {
+        title: 'Pomelo reservations',
+        text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
+    },
+    {
+        title: 'Bot name conflicts',
+        text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+    },
+    {
+        title: 'Brands and large bots',
+        text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
+    },
+    {
+        title: 'Ex-partners and MPA',
+        text: 'Some ex-partners and Moderator Programs Alumni members got handpicked for pomelo without meeting the other requirements. This could be because some of them are too notable enough to be impersonated without meeting Discord partner requirements.'
+    }
+]
     },
     jamspace: {
         rolloutType: 2,
