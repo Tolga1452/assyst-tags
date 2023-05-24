@@ -58,7 +58,7 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Verified bots | Ordered by guild count'
+                name: 'Verified bots | Ordered by server count'
             },
             {
                 status: 0,
