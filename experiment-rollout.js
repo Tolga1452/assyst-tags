@@ -76,7 +76,7 @@ const data = {
             },
             {
                 title: 'Pomelo check bots',
-                text: 'Pomelo check bots operate on either the Friend request api or on lists/databases made before the API endpoint gate. This means that they are inaccurate.'
+                text: 'Pomelo check bots operate on either the Friend request API or on lists/databases made before the API endpoint gate. This means that they are inaccurate.'
             },
             {
                 title: 'Pomelo reservations',
