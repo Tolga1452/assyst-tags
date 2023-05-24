@@ -46,11 +46,7 @@ const data = {
         priority: [
             {
                 status: 2,
-                name: 'Brands | Reserved unless Discord partner'
-            },
-            {
-                status: 2,
-                name: 'Large bots | Criteria unknown | Reservations only'
+                name: 'Brands / Large bots | Reserved unless Discord partner for brands'
             },
             {
                 status: 2,
@@ -62,7 +58,7 @@ const data = {
             },
             {
                 status: 1,
-                name: 'Verified bots | Ordered by support server member count'
+                name: 'Verified bots | Ordered by guild count'
             },
             {
                 status: 0,
@@ -84,11 +80,19 @@ const data = {
             },
             {
                 title: 'Bot name conflicts',
-                text: 'if two or more bots have the same name the bot with the least members in its support server will get the name. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+                text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
             },
             {
                 title: 'Server subscriptions requirement',
                 text: 'You need to make at least 100 USD per month to get priority as a server owner with server subscriptions enabled.'
+            },
+            {
+                title: 'Nitro priority',
+                text: 'To keep users from cancelling their Nitro subscription, every Nitro subscriber who has had Nitro since the first of March 2023 will get priority too. It is unknown if those Nitro subscribers come before older accounts or not.'
+            },
+            {
+                title: 'Brands and large bots',
+                text: 'Brands and large bots got their names reserved before the rollouts have started. Brands who have a Discord partnered Discord account were able to claim their reserved name. Large bots only have their name reserved (see Dyno and Mee6.)'
             }
         ]
     },
