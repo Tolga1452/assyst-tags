@@ -1,4 +1,4 @@
-const lastUpdate = '1684773648'; //Unix timestamp as seconds
+const lastUpdate = '1684915255'; //Unix timestamp as seconds
 
 const data = {
     clyde_ai: {
@@ -61,7 +61,7 @@ const data = {
                 name: 'Partnered and verified server owners (Includes old ones + some content creators)'
             },
             {
-                status: 0,
+                status: 1,
                 name: 'Moderator programs alumnis'
             },
             {
