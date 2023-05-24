@@ -62,7 +62,7 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Top (likely 100, by server count) bot developers (Un-confirmed)'
+                name: 'Top (likely 100, by server count) bot developers (Unconfirmed)'
             },
             {
                 status: 0,
