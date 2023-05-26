@@ -44,41 +44,41 @@ const data = {
         experimentType: 1,
         rolloutType: 1,
         priority: [
-    {
-        status: 2,
-        name: 'Brands / Large bots | Reserved unless Discord partner for brands'
-    },
-    {
-        status: 2,
-        name: 'Discord Staff | Staff and personal accounts'
-    },
-    {
-        status: 2,
-        name: 'Partnered / verified / 100+ USD/month server subscription server owners'
-    },
-    {
-        status: 0,
-        name: 'Verified bots | Ordered by server count'
-    },
-    {
-        status: 0,
-        name: 'Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
-    }
-],
-notes: [
-    {
-        title: 'Checking claimed/reserved names',
-        text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely.'
-    },
-    {
-        title: 'Pomelo reservations',
-        text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
-    },
-    {
-        title: 'Bot name conflicts',
-        text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
-    }
-]
+            {
+                status: 2,
+                name: 'Brands / Large bots | Reserved unless Discord partner for brands'
+            },
+            {
+                status: 2,
+                name: 'Discord Staff | Staff and personal accounts'
+            },
+            {
+                status: 2,
+                name: 'Partnered / verified / 100+ USD/month server subscription server owners'
+            },
+            {
+                status: 0,
+                name: 'Verified bots | Ordered by server count'
+            },
+            {
+                status: 0,
+                name: 'Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
+            }
+        ],
+        notes: [
+            {
+                title: 'Checking claimed/reserved names',
+                text: 'Checking claimed names can be done through Friend requests. This however, is not recommended as it can lead to your account triggering spam/bot detections and thus getting suspended or banned entirely.'
+            },
+            {
+                title: 'Pomelo reservations',
+                text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
+            },
+            {
+                title: 'Bot name conflicts',
+                text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+            }
+        ]
     },
     jamspace: {
         rolloutType: 2,
