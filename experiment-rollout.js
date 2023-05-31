@@ -1,4 +1,4 @@
-const lastUpdate = '1684944273'; //Unix timestamp in seconds
+const lastUpdate = '1685535323'; //Unix timestamp in seconds
 
 const data = {
     clyde_ai: {
@@ -82,7 +82,7 @@ const data = {
     },
     jamspace: {
         rolloutType: 2,
-        timestamp: 1685836800
+        timestamp: 1685404800
     },
     color_together: {
         rolloutType: 2,
