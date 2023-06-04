@@ -158,8 +158,8 @@ const data = {
     }
 };
 
-async function experimentRollout(command, id) {
-    id = id.toLowerCase();
+async function experimentRollout(command) {
+    let id = message.content.split(' ')[2].toLowerCase();
 
     if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
     if (!data[id]) return `:x: This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
