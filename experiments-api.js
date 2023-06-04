@@ -5,8 +5,8 @@ function endpoint(path) {
     return `${baseUrl}/${path}`;
 };
 
-async function experimentsAPI(command, string) {
-    string = string.toLowerCase();
+async function experimentsAPI(command) {
+    let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
 
     let argsSlit = string.split(" ");
     let [cmd, ...args] = argsSlit;
