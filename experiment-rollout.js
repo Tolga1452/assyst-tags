@@ -58,11 +58,7 @@ const data = {
             },
             {
                 status: 0,
-                name: 'Verified bots | Ordered by server count'
-            },
-            {
-                status: 0,
-                name: 'Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
+                name: 'Everyone else | 2015 Nitro Is Rolling/Rolled Out | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
             }
         ],
         notes: [
@@ -75,8 +71,8 @@ const data = {
                 text: 'Unnamed Discord partners have confirmed that Discord took a snapshot of all usernames and have reserved a bunch of usernames, even for normal users.'
             },
             {
-                title: 'Bot name conflicts',
-                text: 'If two or more bots have the same name the bot which is in more guilds will get the username. The other ones will get their discriminator appended to their name. I.e. @bot1234.'
+                title: 'Bots and Apps',
+                text: 'Bots are sticking to the old username system with discriminators as stated by discord staff.'
             }
         ]
     },
