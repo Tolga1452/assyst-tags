@@ -57,11 +57,7 @@ const data = {
                 name: 'Partnered / verified / 100+ USD/month server subscription server owners'
             },
             {
-                status: 0,
-                name: 'Verified bots | Ordered by server count'
-            },
-            {
-                status: 0,
+                status: 1,
                 name: 'Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023'
             }
         ],
@@ -91,15 +87,7 @@ const data = {
     voice_messages_server: {
         rate: 100,
         experimentType: 0,
-        rolloutType: 0,
-        requirements: [
-            {
-                type: 2,
-                value: 200,
-                rate: 100,
-                ranges: [[0, 10000]]
-            }
-        ]
+        rolloutType: 0
     },
     server_guide: {
         rate: 50,
