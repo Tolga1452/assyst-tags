@@ -51,11 +51,11 @@ async function experimentRollout(command, override) { // `override` IS ONLY FOR 
     if (subcommand) {
         switch (subcommand) {
             case 'detailed':
-                let priority = priority?.[(index ?? 0) - 1];
-                let { name, subPriorities } = priority ?? {};
+                let priorityData = priority?.[(index ?? 0) - 1];
+                let { name, subPriorities } = priorityData ?? {};
 
                 if (!index) description = '❌ Please enter a valid index to see details.';
-                else if (!priority) description = '❌ This index does not exist.';
+                else if (!priorityData) description = '❌ This index does not exist.';
                 else if (!subPriorities) description = '❌ This index does not have any details.';
                 else `# ${title} Detailed Rollout Status\n## ${name} (Index: ${index})\n${subPriorities.map(({ spame, spstatus, spposition }) => `- ${spstatus} **${spame}**${spposition ? `\n  - **Current Position:** ${spposition}` : ''}`).join('\n')}`;
                 break;

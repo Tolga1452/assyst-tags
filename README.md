@@ -17,7 +17,7 @@ Replace the `tag_name` with the name of the tag you want to create here and send
 
 ```
 -t create tag_name {js:
-{download:https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/main/experiments-api.js.js}
+{download:https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/main/experiments-api.js}
 experimentsAPI('tag_name');
 }
 ```
@@ -30,6 +30,8 @@ experimentsAPI('tag_name');
 ## Experiment Rollout
 
 By @Tolga1452
+
+- [**Documentation**](https://github.com/discordexperimenthub/assyst-tags/docs/experiment-rollout.md)
 
 ### Setup
 
