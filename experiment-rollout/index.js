@@ -57,7 +57,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 if (!index) description = '❌ Please enter a valid index to see details.';
                 else if (!priorityData) description = '❌ This index does not exist.';
                 else if (!subPriorities) description = '❌ This index does not have any details.';
-                else description = `# ${title} Detailed Rollout Status\n## Index: ${index}\n${subPriorities.map(({ name, status, position }) => `- ${priorityStatus(status)} **${name}**${position ? `\n  - **Current Position:** ${spposition}` : ''}`).join('\n')}`;
+                else description = `# ${title} Detailed Rollout Status\n## Index: ${index}\n${subPriorities.map(({ name, status, position }) => `- ${priorityStatus(status)} **${name}**${position ? `\n  - **Current Position:** ${position}` : ''}`).join('\n')}`;
                 break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
