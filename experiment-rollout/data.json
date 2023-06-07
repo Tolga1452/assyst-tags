@@ -93,7 +93,7 @@
             },
             {
                 "status": 1,
-                "name": "Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023 | More details: `rollout priority 4`",
+                "name": "Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023 | **More details: `{command} detailed 4`**",
                 "subPriorities": [
                     {
                         "status": 2,
