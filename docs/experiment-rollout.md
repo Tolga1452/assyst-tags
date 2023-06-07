@@ -1,5 +1,9 @@
 # [`experiment-rollout.js`](https://github.com/discordexperimenthub/assyst-tags#experiment-rollout)
 
+## Last Update Timestamp
+
+The `lastUpdate` value of the `experiment-rollout/index.js` file have to be updated **EVERY TIME** at least one feature data is updated. The value should be UNIX timestamp in milliseconds.
+
 ## Feature Structure
 
 > **Note:**
@@ -20,35 +24,10 @@
 
 ### Example Feature
 
-```js
-clyde_ai: {
-    rate: 12,
-    ranges: [[0, 1200]],
-    experimentType: 0,
-    rolloutType: 0,
-    requirements: [
-        {
-            type: 0,
-            value: ['COMMUNITY'],
-            rate: 100,
-            ranges: [[0, 10000]]
-        },
-        {
-            type: 2,
-            value: 100,
-            rate: 11,
-            ranges: [
-                [0, 100],
-                [200, 1200]
-            ]
-        },
-        {
-            type: 3,
-            value: [101, 200],
-            rate: 1,
-            ranges: [[100, 200]]
-        }
-    ]
+```json
+"channel_summaries": {
+    "experimentType": 0,
+    "rolloutType": 3
 }
 ```
 
@@ -65,10 +44,10 @@ clyde_ai: {
 
 ```js
 {
-    type: 1,
-    value: ['COMMUNITY'],
-    rate: 30,
-    ranges: [[3000, 6000]]
+    "type": 1,
+    "value": ["COMMUNITY"],
+    "rate": 30,
+    "ranges": [[3000, 6000]]
 }
 ```
 
@@ -78,13 +57,32 @@ clyde_ai: {
 | --- | --- | --- | --- |
 | `status` | number | [Status](#priority-statuses) of the Priority. | ✅ |
 | `name` | string | Name of the Priority. | ✅ |
+| `subPriorities` | Array\<[Sub Priority](#priority-structure)\> | Sub-priorities of the Priority. | ❌ |
 
 ### Example Priority
 
+```json
+{
+    "status": 2,
+    "name": "Discord staff"
+}
+```
+
+## Sub Priority Structure
+
+| Field | Type | Description | Required |
+| --- | --- | --- | --- |
+| `status` | number | [Status](#priority-statuses) of the Sub Priority. | ✅ |
+| `name` | string | Name of the Sub Priority. | ✅ |
+| `position` | string | Current position of the Sub Priority. Only for [Sub Priority Status](#priority-statuses) `1`. | ❌ |
+
+### Example Sub Priority
+
 ```js
 {
-    status: 2,
-    name: 'Discord staff'
+    "status": 1,
+    "name": "2016 Accounts",
+    "position": "Regular Users"
 }
 ```
 
