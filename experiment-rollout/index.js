@@ -1,7 +1,7 @@
 const lastUpdate = '1685988000'; //Unix timestamp in seconds
 
 async function experimentRollout(command) {
-    const data = await fetch('https://assyst-tags-data.glitch.me/experiment-rollout').then(res => res.json());
+    const data = await fetch('https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/f84018f872d12f4bba6a08ce7ad0d3fb8969d8df/experiment-rollout/data.json').then(res => res.json());
 
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
     let [id, subcommand, index] = string.split(' ');
