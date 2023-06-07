@@ -1,7 +1,8 @@
 const lastUpdate = '1685988000'; //Unix timestamp in seconds
-const data = fetch('https://assyst-tags-data.glitch.me/experiment-rollout').then(res => res.json());
 
 async function experimentRollout(command) {
+    const data = await fetch('https://assyst-tags-data.glitch.me/experiment-rollout').then(res => res.json());
+
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
     let [id, subcommand, index] = string.split(' ');
 
