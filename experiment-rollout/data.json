@@ -129,10 +129,18 @@
             },
             {
                 "title": "Rollout Dates (Non-Nitro Users)",
-                "description": "**Current Stage:** January 2017 (Started <t:1686216000:R>)\n**Upcoming Stage:** February 2017 (Starts <t:1686225000:R>)",
+                "description": "**Current Stage:** February 2017 (Started <t:1686225000:R>)\n**Upcoming Stage:** March 2017 (Starts <t:1686190800:R>)",
                 "source": {
                     "title": "Atmosfer",
                     "link": "https://discord.gg/atmosfer"
+                }
+            },
+            {
+                "title": "Status",
+                "description": "**Current Stage of Nitro Users:** November 2017\n**Current Stage of Non-Nitro Users:** January 2016",
+                "source": {
+                    "title": "Discord Username Rollout Tracker",
+                    "link": "https://nekos.sh/discordrollout"
                 }
             }
         ]
