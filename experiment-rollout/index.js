@@ -61,7 +61,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                 for (var detail of details) {
                     let evalOutput;
-                    console.log(detail.description.split(':')[1])
+
                     if (detail.description.startsWith('$js:')) evalOutput = await eval(detail.description.split(':')[1].replaceAll('{pomeloData}', JSON.stringify(extra.pomeloData)));
 
                     output.push(`## ${title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** ${detail.source.link}`);
