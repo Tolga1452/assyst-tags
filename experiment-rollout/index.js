@@ -53,8 +53,14 @@ async function experimentRollout(command, override = null) { // `override` IS ON
             case 'detailed':
                 if (!details) return '❌ This feature does not have any detailed rollout status.';
 
-                const extra = {
-                    pomeloData: await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json())
+                const scripts = {
+                    pomelo: async () => {
+                        const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json());
+
+                        let latest = pomelo.stats.pop();
+
+                        return `**Total:** ${pomelo.total} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`;
+                    }
                 };
 
                 let output = [];
@@ -62,7 +68,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 for (var detail of details) {
                     let evalOutput;
 
-                    if (detail.description.startsWith('$js:')) evalOutput = await eval(detail.description.split(':')[1].replaceAll('{pomeloData}', JSON.stringify(extra.pomeloData)));
+                    if (detail.description.startsWith('$js:')) evalOutput = await scripts[detail.description.split(':')[1]]();
 
                     output.push(`## ${title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** ${detail.source.link}`);
                 };
