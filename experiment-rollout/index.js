@@ -54,6 +54,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 if (!details) return '❌ This feature does not have any detailed rollout status.';
 
                 description = `# ${title} Detailed Rollout Status\n${details.map(async ({ title, description, source }) => `## ${title}\n${description.startsWith('$js:') ? await eval(description.split(':')[1]) : description}\n\n### Source\n- **${source.title}:** ${source.link}`).join('\n\n')}\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
+                break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
         };
