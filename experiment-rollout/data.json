@@ -121,7 +121,7 @@
             },
             {
                 "title": "Statistics",
-                "description": "$js:(async () => { const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json()); let latest = pomelo.stats.pop(); return `**Total:** ${pomelo.total} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`; })();",
+                "description": "$js:(async () => { const pomelo = await fetch(\"https://arewepomeloyet.com/api/v1/pomelos\").then(res => res.json()); let latest = pomelo.stats.pop(); return `**Total:** ${pomelo.total} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`; })();",
                 "source": {
                     "title": "Are We Pomelo Yet?",
                     "link": "https://arewepomeloyet.com/"
