@@ -21,7 +21,7 @@ function timestamp(tag) {
 
             let [date, time, zone] = trydate.split(' ');
             let milliseconds2 = Date.now(`${date}${time ? `T${time}${zone ?? ''}` : ''}`);
-            let seconds2 = Math.floor(milliseconds / 1000);
+            let seconds2 = Math.floor(milliseconds2 / 1000);
 
             response = `## Created Timestamp\n<t:${seconds2}:F>\n- **In Seconds:** ${seconds2}\n- **In Milliseconds:** ${milliseconds2}\n\n## Discord Timestamp Styles\n- **<t:${seconds2}:t>:** \`<t:${seconds2}:t>\`\n- **<t:${seconds2}:T>:** \`<t:${seconds2}:T>\`\n- **<t:${seconds2}:d>:** \`<t:${seconds2}:d>\`\n- **<t:${seconds2}:D>:** \`<t:${seconds2}:D>\`\n- **<t:${seconds2}:f> (Default):** \`<t:${seconds2}:f>\` or \`<t:${seconds2}>\`\n- **<t:${seconds2}:F>:** \`<t:${seconds2}:F>\`\n- **<t:${seconds2}:R>:** \`<t:${seconds2}:R>\``;
             break;
