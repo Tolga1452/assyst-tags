@@ -18,7 +18,7 @@ function timestamp(tag) {
             let regex = /^\d{4}-\d{2}-\d{2}(?: \d{2}:\d{2}:\d{2})?(?: [+-]\d{2}:\d{2})?$/
             let trydate = string.split(`${command} `)[1];
 
-            if (!trydate.match(regex)) return `❌ Please enter a valid date!\n- **Usage:** \`-t ${tag} create <YYYY-MM-DD> [<HH:mm:ss>] [<time_zone>]\`\n**Example:** \`-t ${tag} create 2011-10-10 14:48:00 +09:00\``;
+            if (!trydate || !trydate.match(regex)) return `❌ Please enter a valid date!\n- **Usage:** \`-t ${tag} create <YYYY-MM-DD> [<HH:mm:ss>] [<time_zone>]\`\n**Example:** \`-t ${tag} create 2011-10-10 14:48:00 +09:00\``;
 
             let [date, time, zone] = date.split(' ');
 
