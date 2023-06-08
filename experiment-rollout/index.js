@@ -60,7 +60,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                     if (detail.description.startsWith('$js:')) evalOutput = await eval(detail.description.split(':')[1]);
 
-                    output.push(`## ${title}\n${evalOutput ?? description}\n\n### Source\n- **${source.title}:** ${source.link}`);
+                    output.push(`## ${title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** ${detail.source.link}`);
                 };
 
                 description = `# ${title} Detailed Rollout Status\n${output.map(o => o).join('\n\n')}\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
