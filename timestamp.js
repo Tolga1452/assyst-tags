@@ -20,7 +20,7 @@ function timestamp(tag) {
             if (!trydate || !trydate.match(regex)) return `❌ Please enter a valid date!\n- **Usage:** \`-t ${tag} create <YYYY-MM-DD> [<HH:mm:ss>] [<time_zone>]\`\n- **Example:** \`-t ${tag} create 2011-10-10 14:48:00 +09:00\``;
 
             let [date, time, zone] = trydate.split(' ');
-            let milliseconds2 = Date.now(`${date}${time ? `T${time}${zone ?? ''}` : ''}`);
+            let milliseconds2 = Date.parse(`${date}${time ? `T${time}${zone ?? ''}` : ''}`);
             let seconds2 = Math.floor(milliseconds2 / 1000);
 
             response = `## Created Timestamp\n<t:${seconds2}:F>\n- **In Seconds:** ${seconds2}\n- **In Milliseconds:** ${milliseconds2}\n\n## Discord Timestamp Styles\n- **<t:${seconds2}:t>:** \`<t:${seconds2}:t>\`\n- **<t:${seconds2}:T>:** \`<t:${seconds2}:T>\`\n- **<t:${seconds2}:d>:** \`<t:${seconds2}:d>\`\n- **<t:${seconds2}:D>:** \`<t:${seconds2}:D>\`\n- **<t:${seconds2}:f> (Default):** \`<t:${seconds2}:f>\` or \`<t:${seconds2}>\`\n- **<t:${seconds2}:F>:** \`<t:${seconds2}:F>\`\n- **<t:${seconds2}:R>:** \`<t:${seconds2}:R>\``;
