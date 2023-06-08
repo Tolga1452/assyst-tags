@@ -1,7 +1,7 @@
 const lastUpdate = '1686214180'; //Unix timestamp in seconds
 
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
-    const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${override ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
+    const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
 
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
     let [id, subcommand] = string.split(' ');
