@@ -4,12 +4,12 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${override ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
 
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
-    let [id, subcommand, index] = string.split(' ');
+    let [id, subcommand] = string.split(' ');
 
     if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n\n- Script made by \`✨Tolgchu✨#1452\`: <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- Our Server: https://discord.gg/vK5sZYdaB6`;
     if (!data[id]) return `❌ This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
 
-    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, replacedBy } = data[id];
+    let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, replacedBy, detailed } = data[id];
     let totalServers = 19000000;
     let totalUsers = 150000000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
@@ -51,14 +51,9 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     if (subcommand) {
         switch (subcommand) {
             case 'detailed':
-                let priorityData = priority?.[(index ?? 0) - 1];
-                let { name, subPriorities } = priorityData ?? {};
+                if (!detailed) return '❌ This feature does not have any detailed rollout status.';
 
-                if (!index) description = '❌ Please enter a valid index to see details.';
-                else if (!priorityData) description = '❌ This index does not exist.';
-                else if (!subPriorities) description = '❌ This index does not have any details.';
-                else description = `# ${title} Detailed Rollout Status\n## Index: ${index}\n${subPriorities.map(({ name, status, position }) => `- ${priorityStatus(status)} **${name}**${position ? `\n  - **Current Position:** ${position}` : ''}`).join('\n')}`;
-                break;
+                description = `# ${title} Detailed Rollout Status\n${detailed.map(({ title, description, source }) => `## ${title}\n${description}\n\n### Source\n- **${source.title}:** ${source.link}`).join('\n\n')}\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
         };

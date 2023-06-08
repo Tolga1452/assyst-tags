@@ -21,6 +21,7 @@ The `lastUpdate` value of the `experiment-rollout/index.js` file have to be upda
 | `priority` | Array<[Priority](#priority-structure)> | [Priority](#priority-structure) data of the rollout of the Feature. | ❌ |
 | `timestamp` | number | Timestamp of the rollout of the Feature. Only for [Rollout Type](#rollout-types) `2`. | ❌ |
 | `replacedBy` | string | Id of the Feature that replaced this Feature. Only for [Rollout Type](#rollout-types) `-2`. | ❌ |
+| `details` | Array<[Detail](#detail-structure)> | [Detailed](#detail-structure) rollout status of the Feature. | ❌ |
 
 ### Example Feature
 
@@ -57,7 +58,6 @@ The `lastUpdate` value of the `experiment-rollout/index.js` file have to be upda
 | --- | --- | --- | --- |
 | `status` | number | [Status](#priority-statuses) of the Priority. | ✅ |
 | `name` | string | Name of the Priority. | ✅ |
-| `subPriorities` | Array\<[Sub Priority](#priority-structure)\> | Sub-priorities of the Priority. | ❌ |
 
 ### Example Priority
 
@@ -68,21 +68,40 @@ The `lastUpdate` value of the `experiment-rollout/index.js` file have to be upda
 }
 ```
 
-## Sub Priority Structure
+## Detail Structure
 
 | Field | Type | Description | Required |
 | --- | --- | --- | --- |
-| `status` | number | [Status](#priority-statuses) of the Sub Priority. | ✅ |
-| `name` | string | Name of the Sub Priority. | ✅ |
-| `position` | string | Current position of the Sub Priority. Only for [Sub Priority Status](#priority-statuses) `1`. | ❌ |
+| `title` | string | Title of the Detail. | ✅ |
+| `description` | string | Description (the full text) of the Detail. | ✅ |
+| `source` | [Source](#source-structure) | [Source](#source-structure) of the Detail. | ✅ |
 
-### Example Sub Priority
+### Example Detail
 
-```js
+```json
 {
-    "status": 1,
-    "name": "2016 Accounts",
-    "position": "Regular Users"
+    "title": "Status",
+    "description": "**Nitro Users:** September 2017\n**Non-Nitro Users:** February 2016",
+    "source": {
+        "title": "Discord Experiment Hub (Community)",
+        "link": "https://discord.gg/experiments"
+    }
+}
+```
+
+## Source Structure
+
+| Field | Type | Description | Required |
+| --- | --- | --- | --- |
+| `title` | string | Title of the Source. | ✅ |
+| `link` | string | Link of the Source. | ✅ |
+
+### Example Source
+
+```json
+{
+    "title": "Discord Experiment Hub (Community)",
+    "link": "https://discord.gg/experiments"
 }
 ```
 

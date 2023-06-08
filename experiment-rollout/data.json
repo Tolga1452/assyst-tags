@@ -93,52 +93,47 @@
             },
             {
                 "status": 1,
-                "name": "Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023 | **More details: `{command} detailed 4`**",
-                "subPriorities": [
-                    {
-                        "status": 2,
-                        "name": "2015 Accounts"
-                    },
-                    {
-                        "status": 1,
-                        "name": "2016 Accounts",
-                        "position": "Regular Users"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2017 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2018 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2019 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2020 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2021 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2022 Accounts"
-                    },
-                    {
-                        "status": 0,
-                        "name": "2023 Accounts"
-                    }
-                ]
+                "name": "Everyone else | Ordered by Nitro/Account creation | Needs Nitro bought before 1st March 2023 | **More details: `{command} detailed 4`**"
             }
         ],
         "notes": [
             {
                 "title": "Bots",
                 "text": "Bots are not forced to have unique usernames."
+            }
+        ],
+        "details": [
+            {
+                "title": "Status",
+                "description": "**Nitro Users:** September 2017\n**Non-Nitro Users:** February 2016",
+                "source": {
+                    "title": "Discord Experiment Hub (Community)",
+                    "link": "https://discord.gg/experiments"
+                }
+            },
+            {
+                "title": "Status",
+                "description": "**Nitro Users:** November 2017\n**Non-Nitro Users:** January 2016",
+                "source": {
+                    "title": "Discord Previews",
+                    "link": "https://discord.gg/discord-603970300668805120"
+                }
+            },
+            {
+                "title": "Statistics",
+                "description": "$js:(async () => { const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json()); let latest = pomelo.stats.pop(); return `**Total:** ${pomelo.total} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomeloLastUpdatedAt / 1000)}:R>`; })();",
+                "source": {
+                    "title": "Are We Pomelo Yet?",
+                    "link": "https://arewepomeloyet.com/"
+                }
+            },
+            {
+                "title": "Rollout Dates (Non-Nitro Users)",
+                "description": "**Current Stage (06:20 AM):** December 2016\n**Upcoming Stage (09:20 AM):** January 2017",
+                "source": {
+                    "title": "Atmosfer",
+                    "link": "https://discord.gg/atmosfer"
+                }
             }
         ]
     },
