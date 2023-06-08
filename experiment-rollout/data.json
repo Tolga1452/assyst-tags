@@ -105,7 +105,7 @@
         "details": [
             {
                 "title": "Status",
-                "description": "**Nitro Users:** September 2017\n**Non-Nitro Users:** February 2016",
+                "description": "**Current Stage of Nitro Users:** September 2017\n**Current Stage ofNon-Nitro Users:** February 2016",
                 "source": {
                     "title": "Discord Experiment Hub (Community)",
                     "link": "https://discord.gg/experiments"
@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "**Nitro Users:** November 2017\n**Non-Nitro Users:** January 2016",
+                "description": "**Current Stage of Nitro Users:** November 2017\n**Current Stage of Non-Nitro Users:** January 2016",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Rollout Dates (Non-Nitro Users)",
-                "description": "**Current Stage (06:20 AM):** December 2016\n**Upcoming Stage (09:20 AM):** January 2017",
+                "description": "**Current Stage:** January 2017 (Started <t:1686216000:R>)\n**Upcoming Stage:** February 2017 (Starts <t:1686225000:R>)",
                 "source": {
                     "title": "Atmosfer",
                     "link": "https://discord.gg/atmosfer"
