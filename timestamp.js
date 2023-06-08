@@ -19,8 +19,7 @@ function timestamp(tag) {
 
             if (!trydate || !trydate.match(regex)) return `❌ Please enter a valid date!\n- **Usage:** \`-t ${tag} create <YYYY-MM-DD> [<HH:mm:ss>] [<time_zone>]\`\n- **Example:** \`-t ${tag} create 2011-10-10 14:48:00 +09:00\``;
 
-            let [date, time, zone] = date.split(' ');
-
+            let [date, time, zone] = trydate.split(' ');
             let milliseconds2 = Date.now(`${date}${time ? `T${time}${zone ?? ''}` : ''}`);
             let seconds2 = Math.floor(milliseconds / 1000);
 
