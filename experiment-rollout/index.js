@@ -1,4 +1,4 @@
-const lastUpdate = '1686152806'; //Unix timestamp in seconds
+const lastUpdate = '1686214180'; //Unix timestamp in seconds
 
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${override ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
@@ -70,7 +70,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                     if (detail.description.startsWith('$js:')) evalOutput = await scripts[detail.description.split(':')[1]]();
 
-                    output.push(`## ${title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** ${detail.source.link}`);
+                    output.push(`## ${detail.title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** <${detail.source.link}>`);
                 };
 
                 description = `# ${title} Detailed Rollout Status\n${output.map(o => o).join('\n\n')}\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
