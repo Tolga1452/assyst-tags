@@ -137,7 +137,7 @@
             },
             {
                 "title": "Status",
-                "description": "**ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users; Discord is aware.\n\n**Day 5 - Pending** (Expected to start <t:1686333600:R>)\n- **Wave:** 2 (Expected to start <t:1686353400:R>)\n- **Current Stage of Nitro Users:** June 2020\n- **Current Stage of Non-Nitro Users:** July 2016",
+                "description": "**ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users; Discord is aware.\n\n**Day 5 - Pending** (Expected to start <t:1686333600:R>)\n- **Current Stage of Nitro Users:** June 2020\n- **Current Stage of Non-Nitro Users:** July 2016",
                 "source": {
                     "title": "Discord Username Rollout Tracker",
                     "link": "https://nekos.sh/discordrollout"
