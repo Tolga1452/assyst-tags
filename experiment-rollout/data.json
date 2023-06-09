@@ -105,7 +105,7 @@
         "details": [
             {
                 "title": "Status",
-                "description": "**Current Stage of Nitro Users:** October 2018\n**Current Stage of Non-Nitro Users:** February 2016",
+                "description": "**Current Stage of Nitro Users:** June 2020\n**Current Stage of Non-Nitro Users:** February 2016",
                 "source": {
                     "title": "Discord Experiment Hub (Community)",
                     "link": "https://discord.gg/experiments"
@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "**Wave 7**\n- **Current Stage of Nitro Users:** January 2019\n- **Current Stage of Non-Nitro Users:** March 2016",
+                "description": "**Wave ***\n- **Current Stage of Nitro Users:** June 2020\n- **Current Stage of Non-Nitro Users:** July 2016",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Rollout Dates (Non-Nitro Users)",
-                "description": "**Current Stage:** May 2017 (Started <t:1686252000:R>)\n**Upcoming Stage:** June 2017 (Starts <t:1686261000:R>)",
+                "description": "**Current Stage:** July 2018 (Started <t:1686291600:R>)\n**Upcoming Stage:** August 2018 (Starts <t:1686300600:R>)",
                 "source": {
                     "title": "Atmosfer",
                     "link": "https://discord.gg/atmosfer"
@@ -137,7 +137,7 @@
             },
             {
                 "title": "Status",
-                "description": "**Wave 4 - Pending**\n- **Current Stage of Nitro Users:** January 2019\n- **Current Stage of Non-Nitro Users:** March 2016\n- **Started:** <t:1686247050:R>",
+                "description": "**ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users; Discord is aware.\n\n**Rollout 5 - Pending** (Started <t:1686333600:R>)\n- **Wave:** 2 (Started <t:1686353400:R>)\n**Current Stage of Nitro Users:** June 2020\n- **Current Stage of Non-Nitro Users:** July 2016",
                 "source": {
                     "title": "Discord Username Rollout Tracker",
                     "link": "https://nekos.sh/discordrollout"
