@@ -73,9 +73,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                     output.push(`## ${detail.title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** <${detail.source.link}>`);
                 };
 
-                if (!index) index = 1;
-
-                let detailPerPage = 3;
+                let detailPerPage = 2;
                 let pages = [];
                 let newOutput = null;
                 let limit = Math.ceil(output.length / detailPerPage);
@@ -84,6 +82,8 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                     newOutput = output.splice(0, detailPerPage);
                     pages.push(newOutput);
                 };
+
+                if (!index || index <= 0 || index > pages.length) index = 1;
 
                 let pageContent = pages[index - 1]?.map(o => o).join('\n\n') ?? '';
 
