@@ -105,7 +105,7 @@
         "details": [
             {
                 "title": "Status",
-                "description": "**Current Stage of Nitro Users:** September 2021\n**Current Stage of Non-Nitro Users:** October 2018",
+                "description": "> According to our reports, there are some bugs or Discord made it randomly. The exact work of rollout is currently unknown but you can confirm our latest reports in <#1116092542254059630> (`#pomelo-users`) channel in our server.\n\n**Current Stage of Nitro Users:** February 2023\n**Current Stage of Non-Nitro Users:** October 2018\n\n**Exceptions**\n- November 2019\n- August 2022\n*If you see any exceptions, please join our server and report it in <#1116092542254059630> (`#pomelo-users`) channel.*",
                 "source": {
                     "title": "Discord Experiment Hub (Community)",
                     "link": "https://discord.gg/experiments"
