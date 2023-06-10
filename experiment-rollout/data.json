@@ -105,7 +105,7 @@
         "details": [
             {
                 "title": "Status",
-                "description": "> According to our reports, there are some bugs or Discord made it randomly. The exact work of rollout is currently unknown but you can confirm our latest reports in <#1116092542254059630> (`#pomelo-users`) channel in our server.\n\n- **Current Stage of Nitro Users:** February 2023\n- **Current Stage of Non-Nitro Users:** October 2018\n\n**Nitro User Exceptions**\nAugust 2018, November 2019, December 2019, November 2021, August 2022\n\n**Non-Nitro User Exceptions**\nAugust 2017, December 2017, September 2018\n*If you see any exceptions, please join our server and report it in <#1116092542254059630> (`#pomelo-users`) channel.*",
+                "description": "> According to our reports, there are some bugs or Discord made it randomly. The exact work of rollout is currently unknown but you can confirm our latest reports in <#1116092542254059630> (`#pomelo-users`) channel in our server.\n\n- **Current Stage of Nitro Users:** February 2023\n- **Current Stage of Non-Nitro Users:** October 2018\n\n**Nitro User Exceptions**\nAugust 2018, November 2019, December 2019, November 2021, July 2022, August 2022\n\n**Non-Nitro User Exceptions**\nAugust 2017, December 2017, September 2018\n\n*If you see any exceptions, please join our server and report it in <#1116092542254059630> (`#pomelo-users`) channel.*",
                 "source": {
                     "title": "Discord Experiment Hub (Community)",
                     "link": "https://discord.gg/experiments"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Rollout Dates (Non-Nitro Users)",
-                "description": "- **Current Stage:** June 2019 (Started <t:1686390600:R>)\n- **Upcoming Stage:** July 2019 (Starts <t:1686399600:R>)",
+                "description": "- **Current Stage:** July 2019 (Started <t:1686399600:R>)\n- **Upcoming Stage:** August 2019 (Starts <t:1686408600:R>)",
                 "source": {
                     "title": "Atmosfer",
                     "link": "https://discord.gg/atmosfer"
