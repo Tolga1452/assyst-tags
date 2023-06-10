@@ -78,15 +78,16 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 let detailPerPage = 3;
                 let pages = [];
                 let newOutput = null;
-                let limit = Math.ceil(output.length / detailPerPage) + 1;
+                let limit = Math.ceil(output.length / detailPerPage);
 
-                for (let i = 1; i < limit; i++) {
-                    newOutput = output.splice(detailPerPage);
-                    pages.push(output);
-                    pages = newOutput;
+                for (let i = 0; i < limit; i++) {
+                    newOutput = output.splice(0, detailPerPage);
+                    pages.push(newOutput);
                 };
 
-                description = `# ${title} Detailed Rollout Status\n${pages[index - 1].map(o => o).join('\n\n')}\n\nPage ${index} of ${pages.length} - \`-t ${command} ${id} detailed <index>\`\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
+                let pageContent = pages[index - 1]?.map(o => o).join('\n\n') ?? '';
+
+                description = `# ${title} Detailed Rollout Status\n${pageContent}\n\nPage ${index} of ${pages.length} - \`-t ${command} ${id} detailed <index>\`\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
                 break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
