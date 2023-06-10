@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "**Wave 9**\n- **Current Stage of Nitro Users:** February 2022\n- **Current Stage of Non-Nitro Users:** October 2016",
+                "description": "> Discord seems to have drastically changed the way the rollout works, as we have received multiple reports of people who should meet the current requirements but are unable to claim their name, while other users who do not meet the requirements seem to be able to claim their name just fine. We will post another update as soon as we know more.",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Rollout Dates (Non-Nitro Users)",
-                "description": "- **Current Stage:** December 2018 (Started <t:1686336600:R>)\n\n- **Upcoming Stage:** January 2019 (Starts <t:1686345600:R>)\n- **Upcoming Stage:** February 2019 (Starts <t:1686354600:R>)\n- **Upcoming Stage:** March 2019 (Starts <t:1686363600:R>)\n- **Upcoming Stage:** April 2019 (Starts <t:1686372600:R>)\n- **Upcoming Stage:** May 2019 (Starts <t:1686381600:R>)",
+                "description": "- **Current Stage:** June 2019 (Started <t:1686390600:R>)\n- **Upcoming Stage:** July 2019 (Starts <t:1686399600:R>)",
                 "source": {
                     "title": "Atmosfer",
                     "link": "https://discord.gg/atmosfer"
@@ -137,7 +137,7 @@
             },
             {
                 "title": "Status",
-                "description": "**ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users; Discord is internally aware.\n\n**Day 5 - Pending** (Started <t:1686331320:R>)\n- **Wave:** 1 (Wave 2 expected to start <t:1686353400:R>)\n- **Current Stage of Nitro Users:** February 2022\n- **Current Stage of Non-Nitro Users:** October 2016",
+                "description": "> **ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users and vice versa; Discord is internally aware.\n\n**Day 6 - Pending**\n> We're unsure if this will happen over the weekend or on Monday. Check back reguarly to see any updates!\n- **Current Stage of Nitro Users:** February 2023\n- **Current Stage of Non-Nitro Users:** January 2017",
                 "source": {
                     "title": "Discord Username Rollout Tracker",
                     "link": "https://nekos.sh/discordrollout"
