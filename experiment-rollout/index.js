@@ -83,7 +83,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 for (let i = 1; i < limit; i++) {
                     newOutput = output.splice(detailPerPage);
                     pages.push(output);
-                    list = newOutput;
+                    pages = newOutput;
                 };
 
                 description = `# ${title} Detailed Rollout Status\n${pages[index - 1].map(o => o).join('\n\n')}\n\nPage ${index} of ${pages.length} - \`-t ${command} ${id} detailed <index>\`\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
