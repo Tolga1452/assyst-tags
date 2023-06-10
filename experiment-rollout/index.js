@@ -4,7 +4,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
 
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
-    let [id, subcommand] = string.split(' ');
+    let [id, subcommand, index] = string.split(' ');
 
     if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n### Contact & Support\n- **Script made by @tolgchu:** <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- **Our Server:** https://discord.gg/experiments`;
     if (!data[id]) return `❌ This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
@@ -73,7 +73,20 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                     output.push(`## ${detail.title}\n${evalOutput ?? detail.description}\n\n### Source\n- **${detail.source.title}:** <${detail.source.link}>`);
                 };
 
-                description = `# ${title} Detailed Rollout Status\n${output.map(o => o).join('\n\n')}\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
+                if (!index) index = 1;
+
+                let detailPerPage = 3;
+                let pages = [];
+                let newOutput = null;
+                let limit = Math.ceil(output.length / detailPerPage) + 1;
+
+                for (let i = 1; i < limit; i++) {
+                    newOutput = output.splice(detailPerPage);
+                    pages.push(output);
+                    list = newOutput;
+                };
+
+                description = `# ${title} Detailed Rollout Status\n${pages[index - 1].map(o => o).join('\n\n')}\n\nPage ${index} of ${pages.length} - \`-t ${command} ${id} detailed <index>\`\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
                 break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
