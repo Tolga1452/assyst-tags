@@ -12,9 +12,11 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, replacedBy, details } = data[id];
     let totalServers = 19000000;
     let totalUsers = 150000000;
-    let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
+    let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate);
 
     function fixNumber(n) {
+        n = n.toString().split('').reverse();
+
         let fixedNumber = [];
         let group = [];
         let timer = 0;
