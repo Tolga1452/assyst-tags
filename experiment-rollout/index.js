@@ -1,4 +1,4 @@
-const lastUpdate = '1686419946'; //Unix timestamp in seconds
+const lastUpdate = '1686483896'; //Unix timestamp in seconds
 
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
@@ -13,26 +13,31 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     let totalServers = 19000000;
     let totalUsers = 150000000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate).toString().split('').reverse();
-    let fixed = [];
-    let group = [];
-    let timer = 0;
 
-    for (var digit of count) {
-        if (timer === 3) {
-            fixed.push(group.reverse());
+    function fixNumber(n) {
+        let fixedNumber = [];
+        let group = [];
+        let timer = 0;
 
-            group = [];
-            timer = 0;
+        for (var digit of n) {
+            if (timer === 3) {
+                fixedNumber.push(group.reverse());
+
+                group = [];
+                timer = 0;
+            };
+
+            group.push(digit);
+
+            timer++;
         };
 
-        group.push(digit);
+        if (group.length > 0) fixedNumber.push(group.reverse());
 
-        timer++;
+        return fixedNumber.reverse().map(g => g.map(digit => digit).join('')).join('.');
     };
 
-    if (group.length > 0) fixed.push(group.reverse());
-
-    fixed = fixed.reverse().map(g => g.map(digit => digit).join('')).join('.');
+    let fixed = fixNumber(count);
 
     function priorityStatus(status) {
         switch (status) {
@@ -59,7 +64,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                         let latest = pomelo.stats.pop();
 
-                        return `**Total:** ${pomelo.total} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`;
+                        return `**Total:** ${fixNumber(pomelo.total)} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`;
                     }
                 };
 
@@ -87,7 +92,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                 let pageContent = pages[index - 1]?.map(o => o).join('\n\n') ?? '';
 
-                description = `# ${title} Detailed Rollout Status\n${pageContent}\n\nPage ${index} of ${pages.length} - \`-t ${command} ${id} detailed <index>\`\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
+                description = `# ${title} Detailed Rollout Status\n${pageContent}\n\n**Page ${index} of ${pages.length} | \`-t ${command} ${id} detailed <index>\`**\n\n# ⚠️ WARNING!\nAll of these sources are unofficial! Do not completely trust them!`;
                 break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
