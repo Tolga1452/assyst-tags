@@ -1,4 +1,4 @@
-const lastUpdate = '1686649761'; //Unix timestamp in seconds
+const lastUpdate = '1686680519'; //Unix timestamp in seconds
 
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
