@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "- **Wave:** 16\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** May 2019",
+                "description": "- **Wave:** 18\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** December 2019",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Status",
-                "description": "> **ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users and vice versa; Discord is internally aware.\n\n**Day:** 8 - Pending (Started <t:1686763586:R>)\n- **Wave:** None (Wave 2 ended <t:1686769719:R>)\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** May 2019",
+                "description": "> **ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users and vice versa; Discord is internally aware.\n\n**Day:** 9 - Pending (Expected to start <t:1686851100:R>)\n> *OWNER NOTE: It's becoming impossible to predict the times and waves.*\n- **Wave:** None\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** December 2019",
                 "source": {
                     "title": "Discord Username Rollout Tracker",
                     "link": "https://nekos.sh/discordrollout"
