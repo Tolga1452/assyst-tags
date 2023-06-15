@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "- **Wave:** 18\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** December 2019",
+                "description": "- **Wave:** 19\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** March 2020",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -176,11 +176,11 @@
     "pronouns": {
         "experimentType": 1,
         "rolloutType": 0,
-        "rate": 20,
+        "rate": 70,
         "ranges": [
             [
                 0,
-                2000
+                7000
             ]
         ]
     },
@@ -209,11 +209,11 @@
     "media_channels": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 25,
+        "rate": 30,
         "ranges": [
             [
                 0,
-                2500
+                3000
             ]
         ],
         "requirements": [
@@ -222,11 +222,11 @@
                 "value": [
                     "ROLE_SUBSCRIPTIONS_ENABLED"
                 ],
-                "rate": 25,
+                "rate": 30,
                 "ranges": [
                     [
                         0,
-                        2500
+                        3000
                     ]
                 ]
             }
@@ -235,5 +235,26 @@
     "poker_night_update": {
         "rolloutType": 2,
         "timestamp": 1685923200
+    },
+    "remove_reations_by_emoji": {
+        "experimentType": 0,
+        "rolloutType": 0,
+        "rate": 0.5,
+        "ranges": [
+            [
+                0,
+                50
+            ]
+        ]
+    },
+    "lockdown_mode": {
+        "experimentType": 0,
+        "rolloutType": 0,
+        "rate": 0
+    },
+    "member_safety_tab": {
+        "experimentType": 0,
+        "rolloutType": 0,
+        "rate": 0
     }
 }
