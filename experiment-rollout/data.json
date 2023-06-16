@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "- **Wave:** 21\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** August 2020",
+                "description": "- **Wave:** #22\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** October 2020",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
@@ -129,7 +129,7 @@
             },
             {
                 "title": "Status",
-                "description": "> **ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users and vice versa; Discord is internally aware.\n\n> **UPDATE:** Discord Nitro gifts may NOT count (info from DStaff). Apologies...\n\n**Day:** 10 - Pending (Expected to start <t:1686936600:R>)\n- **Wave:** None\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** August 2020",
+                "description": "> **ALERT:** There is a bug affecting some Nitro users being labeled as Non-Nitro Users and vice versa; Discord is internally aware.\n\n> **UPDATE:** Discord Nitro gifts may NOT count (info from DStaff). Apologies...\n\n**Day:** 10 - Pending (Started <t:1686936600:R>)\n- **Wave:** #1 (Wave #2 expected to start <t:1686955500:R>)\n- **Status:** Wave #1 had multiple confirmed reports of up to **October 2020** (Non-Nitro). **- <t:1686936779:R>**\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** October 2020",
                 "source": {
                     "title": "Discord Username Rollout Tracker",
                     "link": "https://nekos.sh/discordrollout"
@@ -239,11 +239,11 @@
     "remove_reations_by_emoji": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 10,
+        "rate": 50,
         "ranges": [
             [
                 0,
-                1000
+                5000
             ]
         ]
     },
