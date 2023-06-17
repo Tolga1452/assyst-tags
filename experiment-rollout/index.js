@@ -1,5 +1,20 @@
 const lastUpdate = '1686995821'; //Unix timestamp in seconds
 
+//TESTING STUFF (RUN `npm i node-fetch` BEFORE)
+/*
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+
+const message = {
+    content: '-t rollout pomelo detailed 2'
+};
+
+(async () => {
+    let o = await experimentRollout('rollout');
+    console.log(o);
+    console.log(o.length);
+})();
+*/
+
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
 
@@ -14,7 +29,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     let totalUsers = 150000000;
     let count = ((experimentType === 0 ? totalServers : experimentType === 1 ? totalUsers : totalServers + totalUsers) / 100 * rate);
 
-    function fixNumber(n) {
+    function fixNumber(n = 0) {
         n = n.toString().split('').reverse();
 
         let fixedNumber = [];
@@ -56,7 +71,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
         return t.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ');
     };
 
-    let title = fixString(t);
+    let title = fixString(id);
     let description = '';
 
     if (subcommand) {
@@ -66,11 +81,11 @@ async function experimentRollout(command, override = null) { // `override` IS ON
 
                 const scripts = {
                     pomelo: async () => {
-                        const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json());
+                        const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json().catch(() => { }));
 
-                        let latest = pomelo.stats.pop();
+                        let latest = pomelo?.stats?.pop();
 
-                        return `**Total:** ${fixNumber(pomelo.total)} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`;
+                        return `**Total:** ${fixNumber(pomelo?.total)} users got access\n\n**Latest Stage:** ${latest?.date}\n**Total of Stage:** ${latest?.totalCount} users got access\n**Nitro Users of Stage:** ${latest?.nitroCount}\n**Early Supporters of Stage:** ${latest?.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest?.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo?.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo?.lastUpdatedAt / 1000)}:R>`;
                     },
                     pomelo2: async () => {
                         const baseUrl = 'https://discordrollout.nekos.sh/api';
@@ -84,13 +99,13 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             wave: undefined,
                             rollout: undefined
                         };
-                        let update = timeline.updates.find(u => !u.rollouts.find(r => !Object.values(r)[0].toLowerCase().includes('should begin')));
+                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? true)) ?? true));
 
                         if (update) {
                             updateData.started = true;
                             updateData.wave = update.wave;
 
-                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !Object.values(r)[0].toLowerCase().includes('should begin')));
+                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? true)) ?? {});
 
                             updateData.rollout = currentRollout[1];
                             updateData.timestamp = currentRollout[0];
@@ -98,13 +113,13 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             updateData.started = false;
                             updateData.wave = 0;
 
-                            let currentRollout = Object.entries(timeline.updates[0].rollouts[0]);
+                            let currentRollout = Object.entries(timeline.updates[0].rollouts[0])[0];
 
                             updateData.rollout = currentRollout[1];
                             updateData.timestamp = currentRollout[0];
                         };
 
-                        return `${alerts.map(alert => `> **${alert.type}:** ${alert.text}`).join('\n\n')}\n\n**Day:** ${timeline.day} - ${fixString(timeline.type)} (${updateData.wave ? 'Started' : `Expected to start`} <t:${updateData.timestamp}:R>)\n- **Wave:** ${updateData.wave ? `#${updateData.wave}` : 'None'}${timeline.updates.length !== updateData.wave ? ` (Wave #${updateData.wave + 1} expected to start <t:${Object.keys(timeline.updates.find(u => u.wave === updateData.wave + 1).rollouts[0])[0]}):R>` : ''}${updateData.started ? `\n- **Status:** ${updateData.rollout}` : ''}\n**Current Stage of Nitro Users:** ${status.confirmed.nitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nitro}\n- **Current Stage of Non-Nitro Users:** ${status.confirmed.nonnitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nonnitro}`;
+                        return `${alerts.map(alert => `> **${alert.type}:** ${alert.text}`).join('\n\n')}\n\n**Day:** ${timeline.day} - ${fixString(timeline.type)} (${updateData.wave ? 'Started' : `Expected to start`} <t:${updateData.timestamp}:R>)${timeline.content ? `\n> ${timeline.content}` : ''}\n- **Wave:** ${updateData.wave ? `#${updateData.wave}` : 'None'}${timeline.updates.length !== updateData.wave ? ` (Wave #${updateData.wave + 1} expected to start <t:${Object.keys(timeline.updates.find(u => u.wave === updateData.wave + 1).rollouts[0])[0]}:R>)` : ''}${updateData.started ? `\n- **Status:** ${updateData.rollout}` : ''}\n- **Current Stage of Nitro Users:** ${status.confirmed.nitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nitro}\n- **Current Stage of Non-Nitro Users:** ${status.confirmed.nonnitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nonnitro}`;
                     }
                 };
 
