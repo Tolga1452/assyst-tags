@@ -1,4 +1,4 @@
-const lastUpdate = '1686948118'; //Unix timestamp in seconds
+const lastUpdate = '1686995821'; //Unix timestamp in seconds
 
 async function experimentRollout(command, override = null) { // `override` IS ONLY FOR DEVELOPMENT
     const data = await fetch(`https://raw.githubusercontent.com/discordexperimenthub/assyst-tags/${(override && override !== '') ?? 'main'}/experiment-rollout/data.json`).then(res => res.json());
@@ -52,7 +52,11 @@ async function experimentRollout(command, override = null) { // `override` IS ON
         };
     };
 
-    let title = id.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ');
+    function fixString(t) {
+        return t.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ');
+    };
+
+    let title = fixString(t);
     let description = '';
 
     if (subcommand) {
@@ -67,6 +71,40 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                         let latest = pomelo.stats.pop();
 
                         return `**Total:** ${fixNumber(pomelo.total)} users got access\n\n**Latest Stage:** ${latest.date}\n**Total of Stage:** ${latest.totalCount} users got access\n**Nitro Users of Stage:** ${latest.nitroCount}\n**Early Supporters of Stage:** ${latest.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo.lastUpdatedAt / 1000)}:R>`;
+                    },
+                    pomelo2: async () => {
+                        const baseUrl = 'https://discordrollout.nekos.sh/api';
+                        const alerts = (await fetch(`${baseUrl}/alerts/full`).then(res => res.json())).alerts;
+                        const timeline = await fetch(`${baseUrl}/data/timeline/latest`).then(res => res.json());
+                        const status = await fetch(`${baseUrl}/data/status`).then(res => res.json());
+
+                        let updateData = {
+                            started: undefined,
+                            timestamp: undefined,
+                            wave: undefined,
+                            rollout: undefined
+                        };
+                        let update = timeline.updates.find(u => !u.rollouts.find(r => !Object.values(r)[0].toLowerCase().includes('should begin')));
+
+                        if (update) {
+                            updateData.started = true;
+                            updateData.wave = update.wave;
+
+                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !Object.values(r)[0].toLowerCase().includes('should begin')));
+
+                            updateData.rollout = currentRollout[1];
+                            updateData.timestamp = currentRollout[0];
+                        } else {
+                            updateData.started = false;
+                            updateData.wave = 0;
+
+                            let currentRollout = Object.entries(timeline.updates[0].rollouts[0]);
+
+                            updateData.rollout = currentRollout[1];
+                            updateData.timestamp = currentRollout[0];
+                        };
+
+                        return `${alerts.map(alert => `> **${alert.type}:** ${alert.text}`).join('\n\n')}\n\n**Day:** ${timeline.day} - ${fixString(timeline.type)} (${updateData.wave ? 'Started' : `Expected to start`} <t:${updateData.timestamp}:R>)\n- **Wave:** ${updateData.wave ? `#${updateData.wave}` : 'None'}${timeline.updates.length !== updateData.wave ? ` (Wave #${updateData.wave + 1} expected to start <t:${Object.keys(timeline.updates.find(u => u.wave === updateData.wave + 1).rollouts[0])[0]}):R>` : ''}${updateData.started ? `\n- **Status:** ${updateData.rollout}` : ''}\n**Current Stage of Nitro Users:** ${status.confirmed.nitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nitro}\n- **Current Stage of Non-Nitro Users:** ${status.confirmed.nonnitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nonnitro}`;
                     }
                 };
 
