@@ -56,7 +56,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
         return t.split('_').map(word => word.replace(word.split('').shift(), word.split('').shift().toUpperCase())).join(' ');
     };
 
-    let title = fixString(t);
+    let title = fixString(id);
     let description = '';
 
     if (subcommand) {
