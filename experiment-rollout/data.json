@@ -188,13 +188,7 @@
     "clyde_dm": {
         "experimentType": 1,
         "rolloutType": 0,
-        "rate": 50,
-        "ranges": [
-            [
-                0,
-                5000
-            ]
-        ]
+        "rate": 100
     },
     "channel_emojis": {
         "experimentType": 1,
@@ -329,5 +323,10 @@
                 ]
             }
         ]
+    },
+    "clyde_personality": {
+        "experimentType": 0,
+        "rolloutType": 0,
+        "rate": 0
     }
 }
