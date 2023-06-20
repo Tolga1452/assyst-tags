@@ -204,24 +204,18 @@
     "media_channels": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 30,
-        "ranges": [
-            [
-                0,
-                3000
-            ]
-        ],
+        "rate": 100,
         "requirements": [
             {
                 "type": 1,
                 "value": [
                     "ROLE_SUBSCRIPTIONS_ENABLED"
                 ],
-                "rate": 30,
+                "rate": 100,
                 "ranges": [
                     [
                         0,
-                        3000
+                        10000
                     ]
                 ]
             }
