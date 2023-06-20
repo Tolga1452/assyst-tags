@@ -1,4 +1,4 @@
-const lastUpdate = '1686995821'; //Unix timestamp in seconds
+const lastUpdate = '1687249516'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
