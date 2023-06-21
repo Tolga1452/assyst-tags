@@ -113,18 +113,10 @@
             },
             {
                 "title": "Status",
-                "description": "- **Wave:** #25\n- **Current Stage of Nitro Users:** December 2022 (Using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** June 2021",
+                "description": "- **Wave:** #27\n- **Current Stage of Nitro Users:** December 2022 (Still using an unknown random rollout system)\n- **Current Stage of Non-Nitro Users:** Up to December 2021",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
-                }
-            },
-            {
-                "title": "Statistics",
-                "description": "$js:pomelo",
-                "source": {
-                    "title": "Are We Pomelo Yet?",
-                    "link": "https://arewepomeloyet.com/"
                 }
             },
             {
@@ -228,13 +220,7 @@
     "remove_reations_by_emoji": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 50,
-        "ranges": [
-            [
-                0,
-                5000
-            ]
-        ]
+        "rate": 100
     },
     "lockdown_mode": {
         "experimentType": 0,
@@ -321,6 +307,12 @@
     "clyde_personality": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 50,
+        "ranges": [
+            [
+                0,
+                5000
+            ]
+        ]
     }
 }

@@ -1,4 +1,4 @@
-const lastUpdate = '1687281875'; //Unix timestamp in seconds
+const lastUpdate = '1687339239'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
@@ -80,15 +80,6 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 if (!details) return '❌ This feature does not have any detailed rollout status.';
 
                 const scripts = {
-                    pomelo: async () => {
-                        try {
-                            const pomelo = await fetch('https://arewepomeloyet.com/api/v1/pomelos').then(res => res.json());
-
-                            let latest = pomelo?.stats?.pop();
-
-                            return `**Total:** ${fixNumber(pomelo?.total)} users got access\n\n**Latest Stage:** ${latest?.date}\n**Total of Stage:** ${latest?.totalCount} users got access\n**Nitro Users of Stage:** ${latest?.nitroCount}\n**Early Supporters of Stage:** ${latest?.earlySupporterCount}\n**Non-Nitro Users of Stage:** ${latest?.nonNitroCount}\n\n**Last Pomelo:** <t:${Math.floor(pomelo?.lastPomeloAt / 1000)}:R>\n**Last Update:** <t:${Math.floor(pomelo?.lastUpdatedAt / 1000)}:R>`;
-                        } catch (error) { }
-                    },
                     pomelo2: async () => {
                         const baseUrl = 'https://discordrollout.nekos.sh/api';
                         const alerts = (await fetch(`${baseUrl}/alerts/full`).then(res => res.json())).alerts;
