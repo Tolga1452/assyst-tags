@@ -1,4 +1,4 @@
-const lastUpdate = '1687380550'; //Unix timestamp in seconds
+const lastUpdate = '1687423176'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
@@ -92,13 +92,13 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             wave: undefined,
                             rollout: undefined
                         };
-                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? false)) ?? false));
+                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)?.[0]?.toLowerCase()?.includes('should begin')))));
 
                         if (update) {
                             updateData.started = true;
                             updateData.wave = update.wave;
 
-                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? true)) ?? {});
+                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !(Object.values(r)?.[0]?.toLowerCase()?.includes('should begin'))) ?? {});
 
                             updateData.rollout = currentRollout[1];
                             updateData.timestamp = currentRollout[0];
