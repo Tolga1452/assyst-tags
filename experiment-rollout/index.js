@@ -92,7 +92,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             wave: undefined,
                             rollout: undefined
                         };
-                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? true)) ?? true));
+                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)[0].toLowerCase().includes('should begin') ?? false)) ?? false));
 
                         if (update) {
                             updateData.started = true;
