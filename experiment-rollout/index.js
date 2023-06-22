@@ -92,13 +92,13 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             wave: undefined,
                             rollout: undefined
                         };
-                        let update = timeline.updates.find(u => !(u.rollouts.find(r => !(Object.values(r)?.[0]?.toLowerCase()?.includes('should begin')))));
+                        let update = timeline.updates.find(u => !u.rollouts.filter(r => !Object.values(r)?.[0]?.toLowerCase()?.includes('should begin')?.[0]));
 
                         if (update) {
                             updateData.started = true;
                             updateData.wave = update.wave;
 
-                            let currentRollout = Object.entries(update.rollouts.reverse().find(r => !(Object.values(r)?.[0]?.toLowerCase()?.includes('should begin'))) ?? {});
+                            let currentRollout = Object.entries(update.rollouts.reverse().filter(r => Object.values(r)?.[0]?.toLowerCase()?.includes('should begin'))?.[0] ?? {});
 
                             updateData.rollout = currentRollout[1];
                             updateData.timestamp = currentRollout[0];
