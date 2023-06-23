@@ -1,4 +1,4 @@
-const lastUpdate = '1687423176'; //Unix timestamp in seconds
+const lastUpdate = '1687507010'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
@@ -112,7 +112,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                             updateData.timestamp = currentRollout[0];
                         };
 
-                        return `${alerts.map(alert => `> **${alert.type}:** ${alert.text}`).join('\n\n')}\n\n**Day:** ${timeline.day} - ${fixString(timeline.type)} (${updateData.wave ? 'Started' : `Expected to start`} <t:${updateData.timestamp}:R>)${timeline.content ? `\n> ${timeline.content}` : ''}\n- **Wave:** ${updateData.wave ? `#${updateData.wave}` : 'None'}${timeline.updates.length !== updateData.wave ? ` (Wave #${updateData.wave + 1} expected to start <t:${Object.keys(timeline.updates.find(u => u.wave === updateData.wave + 1).rollouts[0])[0]}:R>)` : ''}${updateData.started ? `\n- **Status:** ${updateData.rollout}` : ''}\n- **Current Stage of Nitro Users:** ${status.confirmed.nitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nitro}\n- **Current Stage of Non-Nitro Users:** ${status.confirmed.nonnitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nonnitro}\n- **Last Update:** <t:${status.meta.lastUpdated}:R>`;
+                        return `${alerts.map(alert => `API calculations are broken someone can create a pull request on GitHub (\`-t ${command}\`).\n\n> **${alert.type}:** ${alert.text}`).join('\n\n')}\n\n**Day:** ${timeline.day} - ${fixString(timeline.type)} (${updateData.wave ? 'Started' : `Expected to start`} <t:${updateData.timestamp}:R>)${timeline.content ? `\n> ${timeline.content}` : ''}\n- **Wave:** ${updateData.wave ? `#${updateData.wave}` : 'None'}${timeline.updates.length !== updateData.wave ? ` (Wave #${updateData.wave + 1} expected to start <t:${Object.keys(timeline.updates.find(u => u.wave === updateData.wave + 1).rollouts[0])[0]}:R>)` : ''}${updateData.started ? `\n- **Status:** ${updateData.rollout}` : ''}\n- **Current Stage of Nitro Users:** ${status.confirmed.nitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nitro}\n- **Current Stage of Non-Nitro Users:** ${status.confirmed.nonnitro.toLowerCase().includes('completed') ? 'Completed' : status.confirmed.nonnitro}\n- **Last Update:** <t:${status.meta.lastUpdated}:R>`;
                     }
                 };
 
