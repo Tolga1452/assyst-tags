@@ -129,10 +129,6 @@
             }
         ]
     },
-    "jamspace": {
-        "rolloutType": 2,
-        "timestamp": 1685404800
-    },
     "color_together": {
         "rolloutType": 0,
         "experimentType": 1,
@@ -212,10 +208,6 @@
                 ]
             }
         ]
-    },
-    "poker_night_update": {
-        "rolloutType": 2,
-        "timestamp": 1685923200
     },
     "remove_reations_by_emoji": {
         "experimentType": 0,
@@ -308,5 +300,16 @@
         "experimentType": 0,
         "rolloutType": 0,
         "rate": 100
+    },
+    "clyde_gdm": {
+        "experimentType": 1,
+        "rolloutType": 0,
+        "rate": 25,
+        "ranges": [
+            [
+                0,
+                2500
+            ]
+        ]
     }
 }

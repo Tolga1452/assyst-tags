@@ -1,4 +1,4 @@
-const lastUpdate = '1687628053'; //Unix timestamp in seconds
+const lastUpdate = '1687685178'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
@@ -155,9 +155,6 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 break;
             case 1:
                 description = `<:ticket:1100811774229495858> This feature is very slowly rolling out to all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} from old to new ones, this process may take a few months.`;
-                break;
-            case 2:
-                description = `🥳 This feature is a part of **Birthday Activities**. Releases/Released ||**<t:${timestamp}:R>**||.`;
                 break;
             case 3:
                 description = `<:DEH:1098207702682980404> This feature is currently in beta/alpha testing.`;

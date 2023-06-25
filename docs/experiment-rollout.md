@@ -121,7 +121,6 @@ The `lastUpdate` value of the `experiment-rollout/index.js` file have to be upda
 | `-1` | Rollout has reverted due to security issues |
 | `0` | Regular rollout |
 | `1` | Very slow rollout from old to new |
-| `2` | Birthday activities feature |
 | `3` | In beta/alpha testing |
 
 ## Requirement Types
