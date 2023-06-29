@@ -158,7 +158,7 @@
         "notes": [
             {
                 "title": "Masked Links",
-                "text": "Rollouts do not include **masked links**."
+                "text": "Currently, only 5% (9500 - 10000) of all servers have masked links."
             }
         ]
     },
@@ -310,6 +310,23 @@
                 0,
                 2500
             ]
+        ]
+    },
+    "markdown_user": {
+        "rate": 100,
+        "ranges": [
+            [
+                0,
+                10000
+            ]
+        ],
+        "experimentType": 1,
+        "rolloutType": 0,
+        "notes": [
+            {
+                "title": "Masked Links",
+                "text": "Current rollout doesn't include masked links."
+            }
         ]
     }
 }
