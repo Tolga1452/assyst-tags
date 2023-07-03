@@ -105,7 +105,7 @@
         "details": [
             {
                 "title": "Status",
-                "description": "> According to our reports, there are some bugs or Discord made it randomly. The exact work of rollout is currently unknown but **YOU CAN CONFIRM** our all reports in <#1116092542254059630> (`#pomelo-reports`) channel in our server.\n\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** June 6th, 2023 (Image: <https://cdn.discordapp.com/attachments/1116092542254059630/1121934555776045086/image.png>)",
+                "description": "> **YOU CAN CONFIRM** our all reports in <#1116092542254059630> (`#pomelo-reports`) channel in our server.\n\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** June 17th, 2023 (Image: <https://cdn.discordapp.com/attachments/1116092542254059630/1125047138217361578/Screenshot_20230702_075155_Discord.jpg>)",
                 "source": {
                     "title": "Discord Experiment Hub (Community)",
                     "link": "https://discord.gg/experiments"
@@ -113,7 +113,7 @@
             },
             {
                 "title": "Status",
-                "description": "- **Wave:** #36\n- **Current Stage:** June 9th 2023",
+                "description": "> **What is happening with the username rollout?**\n> For the past week, Discord has seemingly been rolling out usernames to accounts that are 14 days old. It's likely that all users will receive the update once Discord switches account creation to only use usernames, though we don't have any knowledge of when that update might happen.\n\nPomelo is confirmed to have rolled out to June 17th, 2023.",
                 "source": {
                     "title": "Discord Previews",
                     "link": "https://discord.gg/discord-603970300668805120"
