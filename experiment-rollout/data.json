@@ -304,11 +304,11 @@
     "clyde_gdm": {
         "experimentType": 1,
         "rolloutType": 0,
-        "rate": 25,
+        "rate": 50,
         "ranges": [
             [
                 0,
-                2500
+                5000
             ]
         ]
     },
