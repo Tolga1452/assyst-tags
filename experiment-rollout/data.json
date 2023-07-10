@@ -165,13 +165,7 @@
     "pronouns": {
         "experimentType": 1,
         "rolloutType": 0,
-        "rate": 70,
-        "ranges": [
-            [
-                0,
-                7000
-            ]
-        ]
+        "rate": 100
     },
     "clyde_dm": {
         "experimentType": 1,
