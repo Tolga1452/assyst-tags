@@ -104,27 +104,11 @@
         ],
         "details": [
             {
-                "title": "Status",
-                "description": "> **YOU CAN CONFIRM** our all reports in <#1116092542254059630> (`#pomelo-reports`) channel in our server.\n\n- **Current Stage of Nitro Users:** Completed\n- **Current Stage of Non-Nitro Users:** June 20th, 2023 (Image: <https://cdn.discordapp.com/attachments/1089842190840246342/1126215439991713913/image.png>)",
+                "title": "Announcement",
+                "description": "Pomelo has **almost** rolled out to everyone. So we aren't following the updates anymore.",
                 "source": {
-                    "title": "Discord Experiment Hub (Community)",
+                    "title": "Discord Experiment Hub",
                     "link": "https://discord.gg/experiments"
-                }
-            },
-            {
-                "title": "Status",
-                "description": "> **What is happening with the username rollout?**\n> For the past week, Discord has seemingly been rolling out usernames to accounts that are 14 days old. It's likely that all users will receive the update once Discord switches account creation to only use usernames, though we don't have any knowledge of when that update might happen.\n\nPomelo is confirmed to have rolled out to June 17th, 2023.",
-                "source": {
-                    "title": "Discord Previews",
-                    "link": "https://discord.gg/discord-603970300668805120"
-                }
-            },
-            {
-                "title": "Status",
-                "description": "$js:pomelo2",
-                "source": {
-                    "title": "Discord Username Rollout Tracker",
-                    "link": "https://nekos.sh/discordrollout"
                 }
             }
         ]
@@ -135,13 +119,7 @@
         "rate": 0
     },
     "server_guide": {
-        "rate": 50,
-        "ranges": [
-            [
-                5000,
-                10000
-            ]
-        ],
+        "rate": 100,
         "experimentType": 0,
         "rolloutType": 0
     },
@@ -320,6 +298,26 @@
             {
                 "title": "Masked Links",
                 "text": "Current rollout doesn't include masked links."
+            }
+        ]
+    },
+    "automod_usernames": {
+        "rate": 100,
+        "experimentType": 0,
+        "rolloutType": 0,
+        "requirements": [
+            {
+                "type": 1,
+                "value": [
+                    "COMMUNITY"
+                ],
+                "rate": 100,
+                "ranges": [
+                    [
+                        0,
+                        10000
+                    ]
+                ]
             }
         ]
     }
