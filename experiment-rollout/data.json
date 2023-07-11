@@ -320,5 +320,16 @@
                 ]
             }
         ]
+    },
+    "voice_channel_statuses": {
+        "experimentType": 0,
+        "rolloutType": 0,
+        "rate": "1",
+        "ranges": [
+            [
+                50,
+                150
+            ]
+        ]
     }
 }
