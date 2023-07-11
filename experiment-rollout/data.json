@@ -321,7 +321,7 @@
             }
         ]
     },
-    "voice_channel_statuses": {
+    "voice_channel_topics": {
         "experimentType": 0,
         "rolloutType": 0,
         "rate": "1",
