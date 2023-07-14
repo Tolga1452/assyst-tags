@@ -55,21 +55,9 @@
         ]
     },
     "split_permissions": {
-        "rate": 1,
-        "ranges": [
-            [
-                0,
-                100
-            ]
-        ],
-        "experimentType": 0,
+        "experimentType": 1,
         "rolloutType": 0,
-        "notes": [
-            {
-                "title": "Rollout Date",
-                "text": "This feature is expected to be rolled out on **June 30**."
-            }
-        ]
+        "rate": 100
     },
     "channel_summaries": {
         "experimentType": 0,
@@ -116,7 +104,7 @@
     "color_together": {
         "rolloutType": 0,
         "experimentType": 1,
-        "rate": 0
+        "rate": 100
     },
     "server_guide": {
         "rate": 100,
@@ -136,7 +124,7 @@
         "notes": [
             {
                 "title": "Masked Links",
-                "text": "Currently, only 5% (9500 - 10000) of all servers have masked links."
+                "text": "Currently, only 20% (8000 - 10000) of all servers have masked links."
             }
         ]
     },
@@ -189,12 +177,33 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 100,
+        "requirements": [
+            {
+                "type": 1,
+                "value": [
+                    "MEMBER_SAFETY_PAGE_ROLLOUT"
+                ],
+                "rate": 100,
+                "ranges": [
+                    [
+                        0,
+                        10000
+                    ]
+                ]
+            }
+        ]
     },
     "member_safety_tab": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 25,
+        "ranges": [
+            [
+                5000,
+                7500
+            ]
+        ]
     },
     "guest_invites": {
         "experimentType": 0,
@@ -324,11 +333,15 @@
     "voice_channel_topics": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": "1",
+        "rate": "2",
         "ranges": [
             [
-                50,
-                150
+                550,
+                650
+            ],
+            [
+                650,
+                750
             ]
         ]
     }
