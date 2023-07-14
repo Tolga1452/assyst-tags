@@ -177,7 +177,22 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 0,
+        "requirements": [
+            {
+                "type": 1,
+                "value": [
+                    "MEMBER_SAFETY_PAGE_ROLLOUT"
+                ],
+                "rate": 100,
+                "ranges": [
+                    [
+                        0,
+                        10000
+                    ]
+                ]
+            }
+        ]
     },
     "member_safety_tab": {
         "experimentType": 0,
