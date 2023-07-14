@@ -55,7 +55,7 @@
         ]
     },
     "split_permissions": {
-        "experimentType": 1,
+        "experimentType": 0,
         "rolloutType": 0,
         "rate": 100
     },
