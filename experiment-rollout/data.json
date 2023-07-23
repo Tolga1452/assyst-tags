@@ -55,25 +55,55 @@
         ]
     },
     "split_permissions": {
-        "rate": 1,
-        "ranges": [
-            [
-                0,
-                100
-            ]
-        ],
+        "rate": 100,
         "experimentType": 0,
-        "rolloutType": 0,
-        "notes": [
-            {
-                "title": "Rollout Date",
-                "text": "This feature is expected to be rolled out on **June 30**."
-            }
-        ]
+        "rolloutType": 0
     },
     "channel_summaries": {
         "experimentType": 0,
-        "rolloutType": 3
+        "rolloutType": 3,
+        "servers": [
+            {
+                "name": "Discord Experiment Hub",
+                "invite": "https://discord.gg/experiments",
+                "owner": {
+                    "id": "329671025312923648",
+                    "username": "tolgchu"
+                }
+            },
+            {
+                "name": "SummariesAI",
+                "invite": "https://discord.gg/tVZHaBMTQE",
+                "owner": {
+                    "id": "664103194162495488",
+                    "username": "bonkand"
+                }
+            },
+            {
+                "name": "Discord Previews",
+                "invite": "https://discord.gg/discord-603970300668805120",
+                "owner": {
+                    "id": "562415519454461962",
+                    "username": "objectified"
+                }
+            },
+            {
+                "name": "Wumpus Central",
+                "invite": "https://discord.gg/wumpus-central-1087801778365546556",
+                "owner": {
+                    "id": "928302770849710101",
+                    "username": "dzikstar"
+                }
+            },
+            {
+                "name": "Lucie's community",
+                "invite": "https://discord.gg/FsnkKkptsq",
+                "owner": {
+                    "id": "534460774005997571",
+                    "username": "prozilla"
+                }
+            }
+        ]
     },
     "pomelo": {
         "experimentType": 1,
@@ -116,7 +146,7 @@
     "color_together": {
         "rolloutType": 0,
         "experimentType": 1,
-        "rate": 0
+        "rate": 100
     },
     "server_guide": {
         "rate": 100,
@@ -136,7 +166,7 @@
         "notes": [
             {
                 "title": "Masked Links",
-                "text": "Currently, only 5% (9500 - 10000) of all servers have masked links."
+                "text": "Currently, only 5% (9500 - 10000) of all servers have masked links.\n\n### Servers with this feature (1/5)\n- **Masked Links by <@832999154774048780> (@mini35):** <https://discord.gg/X7AWChESME>"
             }
         ]
     },
@@ -179,6 +209,16 @@
                     ]
                 ]
             }
+        ],
+        "servers": [
+            {
+                "name": "Media Channels",
+                "invite": "https://discord.gg/rVKvQBxCYh",
+                "owner": {
+                    "id": "664103194162495488",
+                    "username": "bonkand"
+                }
+            }
         ]
     },
     "remove_reations_by_emoji": {
@@ -194,7 +234,13 @@
     "member_safety_tab": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 25,
+        "ranges": [
+            [
+                5000,
+                7500
+            ]
+        ]
     },
     "guest_invites": {
         "experimentType": 0,
@@ -266,6 +312,16 @@
                     ]
                 ]
             }
+        ],
+        "servers": [
+            {
+                "name": "Guest Invites",
+                "invite": "https://discord.gg/w6ZRfzrzfe",
+                "owner": {
+                    "id": "664103194162495488",
+                    "username": "bonkand"
+                }
+            }
         ]
     },
     "clyde_personality": {
@@ -324,12 +380,6 @@
     "voice_channel_topics": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": "1",
-        "ranges": [
-            [
-                50,
-                150
-            ]
-        ]
+        "rate": 0
     }
 }
