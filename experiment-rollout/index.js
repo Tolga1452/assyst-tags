@@ -110,7 +110,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
             case 'servers':
                 if (!servers) return '❌ This feature does not have any servers added.';
 
-                description = `# Servers With ${title} (${servers.length}/5)\n${servers.map(server => `- **${server.name} by <@${server.owner.id}> (@${server.owner.username})** <${server.invite}>`).join('\n')}`;
+                description = `# Servers With ${title} (${servers.length}/5)\n${servers.map(server => `- **${server.name} by <@${server.owner.id}> (@${server.owner.username})** <${server.invite}>`).join('\n')}${servers.length < 5 ? `\n\nStill ${5 - servers.length} servers can add here. You can add servers with creating an issue or pull request from our GitHub repository.` : ''}`;
                 break;
             default:
                 description = '❌ This subcommand does not exist. Available subcommands: \`detailed\`';
