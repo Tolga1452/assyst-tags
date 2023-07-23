@@ -55,9 +55,9 @@
         ]
     },
     "split_permissions": {
-        "rate": 100,
         "experimentType": 0,
-        "rolloutType": 0
+        "rolloutType": 0,
+        "rate": 100
     },
     "channel_summaries": {
         "experimentType": 0,
@@ -166,7 +166,7 @@
         "notes": [
             {
                 "title": "Masked Links",
-                "text": "Currently, only 5% (9500 - 10000) of all servers have masked links.\n\n### Servers with this feature (1/5)\n- **Masked Links by <@832999154774048780> (@mini35):** <https://discord.gg/X7AWChESME>"
+                "text": "Currently, only 20% (8000 - 10000) of all servers have masked links.\n\n### Servers with this feature (1/5)\n- **Masked Links by <@832999154774048780> (@mini35):** <https://discord.gg/X7AWChESME>"
             }
         ]
     },
@@ -234,13 +234,7 @@
     "member_safety_tab": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 25,
-        "ranges": [
-            [
-                5000,
-                7500
-            ]
-        ]
+        "rate": 0
     },
     "guest_invites": {
         "experimentType": 0,
