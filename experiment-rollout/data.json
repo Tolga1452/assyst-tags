@@ -374,6 +374,33 @@
     "voice_channel_topics": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 20,
+        "ranges": [
+            [
+                550,
+                650
+            ],
+            [
+                1150,
+                1550
+            ],
+            [
+                3450,
+                4950
+            ]
+        ],
+        "requirements": [
+            {
+                "type": 2,
+                "value": 2000,
+                "rate": 100,
+                "ranges": [
+                    [
+                        0,
+                        10000
+                    ]
+                ]
+            }
+        ]
     }
 }
