@@ -162,13 +162,7 @@
             ]
         ],
         "experimentType": 0,
-        "rolloutType": 0,
-        "notes": [
-            {
-                "title": "Masked Links",
-                "text": "Currently, only 20% (8000 - 10000) of all servers have masked links.\n\n### Servers with this feature (1/5)\n- **Masked Links by <@832999154774048780> (@mini35):** <https://discord.gg/X7AWChESME>"
-            }
-        ]
+        "rolloutType": 0
     },
     "pronouns": {
         "experimentType": 1,
@@ -229,7 +223,28 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 1,
+        "ranges": [
+            [
+                2500,
+                2600
+            ]
+        ],
+        "requirements": [
+            {
+                "type": 1,
+                "value": [
+                    "COMMUNITY"
+                ],
+                "rate": 100,
+                "ranges": [
+                    [
+                        0,
+                        10000
+                    ]
+                ]
+            }
+        ]
     },
     "member_safety_tab": {
         "experimentType": 0,
@@ -401,6 +416,17 @@
                     ]
                 ]
             }
+        ]
+    },
+    "reply_welcome_messages": {
+        "rate": 50,
+        "experimentType": 0,
+        "rolloutType": 0,
+        "ranges": [
+            [
+                5000,
+                10000
+            ]
         ]
     }
 }
