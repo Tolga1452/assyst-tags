@@ -223,11 +223,11 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 1,
+        "rate": 5,
         "ranges": [
             [
                 2500,
-                2600
+                3000
             ]
         ],
         "requirements": [
