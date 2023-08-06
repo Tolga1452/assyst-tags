@@ -249,7 +249,13 @@
     "member_safety_tab": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 0
+        "rate": 25,
+        "ranges": [
+            [
+                5000,
+                7500
+            ]
+        ]
     },
     "guest_invites": {
         "experimentType": 0,
