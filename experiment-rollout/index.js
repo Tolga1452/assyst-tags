@@ -1,4 +1,4 @@
-const lastUpdate = '1691312123'; //Unix timestamp in seconds
+const lastUpdate = '1691689317'; //Unix timestamp in seconds
 
 //TESTING STUFF (RUN `npm i node-fetch` BEFORE)
 /*
@@ -21,7 +21,9 @@ async function experimentRollout(command, override = null) { // `override` IS ON
     let string = message.content.split(`${command} `)[1]?.toLowerCase() ?? '';
     let [id, subcommand, index] = string.split(' ');
 
-    if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}\n\n### Last Update\n<t:${lastUpdate}:R>\n### Contact & Support\n- **Script made by @tolgchu:** <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- **Our Server:** https://discord.gg/experiments`;
+    if (!id) return `## Usage\n\`-t ${command} <feature_id>\`\n\n## Available Feature Ids\n${Object.keys(data).filter(id => data[id].rate !== 100).map(id => `\`${id}\``).join(', ')}\n\n**Note:** Type \`-t ${command} features\` to see all feature ids including completed ones.\n\n### Last Update\n<t:${lastUpdate}:R>\n### Contact & Support\n- **Script made by @tolgchu:** <https://github.com/discordexperimenthub/assyst-tags#experiment-rollout>\n- **Our Server:** https://discord.gg/experiments`;
+    else if (id === 'features') return `## All Feature Ids\n${Object.keys(data).map(id => `\`${id}\``).join(', ')}`;
+
     if (!data[id]) return `❌ This feature id does not exist. Type **\`-t ${command}\`** to see all available feature ids.`;
 
     let { rate, ranges, experimentType, rolloutType, requirements, priority, notes, timestamp, replacedBy, details, servers } = data[id];
