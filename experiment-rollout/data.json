@@ -438,7 +438,13 @@
     "domain_connection": {
         "rate": 0,
         "experimentType": 1,
-        "rolloutType": 0
+        "rolloutType": 0,
+        "notes": [
+            {
+                "title": "Other Ways",
+                "text": "There was a way to do this but it was removed."
+            }
+        ]
     },
     "profile_effects": {
         "rate": 0,
@@ -451,7 +457,7 @@
         "rolloutType": 0,
         "notes": [
             {
-                "title": "Easter Egg",
+                "title": "Easter Egg to Enable",
                 "text": "||1. Tap to this emoji: ✨\n2. Hold the emoji in the popout\n3. Wait a few seconds||"
             }
         ]
