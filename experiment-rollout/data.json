@@ -223,11 +223,11 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 5,
+        "rate": 50,
         "ranges": [
             [
                 2500,
-                3000
+                5000
             ]
         ],
         "requirements": [
@@ -436,6 +436,11 @@
         ]
     },
     "domain_connection": {
+        "rate": 0,
+        "experimentType": 1,
+        "rolloutType": 0
+    },
+    "profile_effects": {
         "rate": 0,
         "experimentType": 1,
         "rolloutType": 0
