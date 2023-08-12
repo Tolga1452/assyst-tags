@@ -444,5 +444,16 @@
         "rate": 0,
         "experimentType": 1,
         "rolloutType": 0
+    },
+    "tabs_v2": {
+        "rate": 0,
+        "experimentType": 1,
+        "rolloutType": 0,
+        "notes": [
+            {
+                "title": "Easter Egg",
+                "text": "||1. Tap to this emoji: ✨\n2. Hold the emoji in the popout\n3. Wait a few seconds||"
+            }
+        ]
     }
 }
