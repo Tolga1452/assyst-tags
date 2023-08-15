@@ -52,6 +52,16 @@
                     ]
                 ]
             }
+        ],
+        "servers": [
+            {
+                "name": "Free Clyde 🌌",
+                "invite": "https://discord.gg/aXMh98DzBj",
+                "owner": {
+                    "id": "1073325901825187841",
+                    "username": "nerdarp1"
+                }
+            }
         ]
     },
     "split_permissions": {
@@ -101,6 +111,14 @@
                 "owner": {
                     "id": "534460774005997571",
                     "username": "prozilla"
+                }
+            },
+            {
+                "name": "AniLab",
+                "invite": "https://discord.gg/JfN5m632cW",
+                "owner": {
+                    "id": "622450109317251088",
+                    "username": "harshfeudal"
                 }
             }
         ]
