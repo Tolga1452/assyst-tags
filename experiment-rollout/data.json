@@ -52,6 +52,16 @@
                     ]
                 ]
             }
+        ],
+        "servers": [
+            {
+                "name": "Free Clyde 🌌",
+                "invite": "https://discord.gg/aXMh98DzBj",
+                "owner": {
+                    "id": "1073325901825187841",
+                    "username": "nerdarp1"
+                }
+            }
         ]
     },
     "split_permissions": {
