@@ -223,12 +223,22 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 50,
+        "rate": 30,
         "ranges": [
             [
                 2500,
                 5000
+            ],
+            [
+                7500,
+                8000
             ]
+        ],
+        "notes": [
+            {
+                "title": "Members Tab",
+                "text": "5% (7500 - 8000) of servers have the Members tab enabled."
+            }
         ],
         "requirements": [
             {
@@ -460,6 +470,25 @@
                 "title": "Easter Egg to Enable",
                 "text": "||1. Tap to this emoji: ✨\n2. Hold the emoji in the popout\n3. Wait a few seconds||"
             }
+        ]
+    },
+    "improved_bans_tab": {
+        "rate": 15,
+        "experimentType": 0,
+        "rolloutType": 0,
+        "ranges": [
+            [
+                100,
+                200
+            ],
+            [
+                600,
+                1000
+            ],
+            [
+                2000,
+                3000
+            ]
         ]
     }
 }
