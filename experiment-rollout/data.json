@@ -233,7 +233,7 @@
             }
         ]
     },
-    "remove_reations_by_emoji": {
+    "remove_reactions_by_emoji": {
         "experimentType": 0,
         "rolloutType": 0,
         "rate": 100
