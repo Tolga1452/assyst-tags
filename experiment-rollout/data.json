@@ -283,6 +283,16 @@
                 5000,
                 7500
             ]
+        ],
+        "servers": [
+            {
+                "name": "PAYDAY Hispanohablante",
+                "invite": "https://discord.gg/sfbYxeZS2r",
+                "owner": {
+                    "id": "335186902623846400",
+                    "username": "imdinax"
+                }
+            }
         ]
     },
     "guest_invites": {
