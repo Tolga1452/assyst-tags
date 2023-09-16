@@ -69,6 +69,14 @@
                     "id": "760538995649282140",
                     "username": "vatsious"
                 }
+            },
+            {
+                "name": "Clyde's Home",
+                "invite": "https://discord.gg/AB7wgHaq",
+                "owner": {
+                    "id": "329671025312923648",
+                    "username": "tolgchu"
+                }
             }
         ]
     },
@@ -241,23 +249,7 @@
     "lockdown_mode": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 30,
-        "ranges": [
-            [
-                2500,
-                5000
-            ],
-            [
-                7500,
-                8000
-            ]
-        ],
-        "notes": [
-            {
-                "title": "Members Tab",
-                "text": "5% (7500 - 8000) of servers have the Members tab enabled."
-            }
-        ],
+        "rate": 100,
         "requirements": [
             {
                 "type": 1,
@@ -277,13 +269,7 @@
     "member_safety_tab": {
         "experimentType": 0,
         "rolloutType": 0,
-        "rate": 25,
-        "ranges": [
-            [
-                5000,
-                7500
-            ]
-        ]
+        "rate": 100
     },
     "guest_invites": {
         "experimentType": 0,
