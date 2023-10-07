@@ -63,7 +63,7 @@ async function experimentRollout(command, override = null) { // `override` IS ON
             case 0:
                 return '<:unchecked:1078022830828048485>';
             case 1:
-                return '<:dehMiniContributor:1102308508466151494>';
+                return '<:dehMiniContributor:1153007062742216855>';
             case 2:
                 return '<:checked:1062424010652123229>';
         };
@@ -123,24 +123,24 @@ async function experimentRollout(command, override = null) { // `override` IS ON
                 description = `<:switch_accounts:1077291371720867850> This feature has been replaced by **\`${replacedBy}\`** feature.`;
                 break;
             case -1:
-                description = `<:dehAdmin:1102308503479140562> This feature's rollout has reverted due to some security issues. Restart date is unknown.`;
+                description = `<:dehAdmin:1153007058828939424> This feature's rollout has reverted due to some security issues. Restart date is unknown.`;
                 break;
             case 1:
                 description = `<:ticket:1100811774229495858> This feature is very slowly rolling out to all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} from old to new ones, this process may take a few months.`;
                 break;
             case 3:
-                description = `<:DEH:1098207702682980404> This feature is currently in beta/alpha testing.`;
+                description = `<:DEH:1152632213771399288> This feature is currently in beta/alpha testing.`;
                 break;
             default:
                 switch (rate) {
                     case 0:
-                        description = `<:DEH:1098207702682980404> This feature has not started to rolling out yet.`;
+                        description = `<:DEH:1152632213771399288> This feature has not started to rolling out yet.`;
                         break;
                     case 100:
                         description = `🎉 This feature has rolled out to all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'}!`;
                         break;
                     default:
-                        description = `<:dehMiniContributor:1102308508466151494> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
+                        description = `<:dehMiniContributor:1153007062742216855> This feature has rolled out to **${rate}%** of all ${experimentType === 0 ? 'servers' : experimentType === 1 ? 'users' : 'servers and users'} (**~${fixed}**)! Ranges: ${ranges.map(range => `\`${range[0] ?? '?'} - ${range[1] ?? '?'}\``).join(', ')}.`;
                 };
         };
 
